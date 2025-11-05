@@ -1,26 +1,32 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
-import * as vscode from 'vscode';
+import * as vsc from './接口封装';
+import { 补全器实现 } from './补全实现';
+import { env } from './环境配置';
 
-// This method is called when your extension is activated
-// Your extension is activated the very first time the command is executed
-export function activate(context: vscode.ExtensionContext) {
-
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "vscode-zh-completion" is now active!');
-
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with registerCommand
-	// The commandId parameter must match the command field in package.json
-	const disposable = vscode.commands.registerCommand('vscode-zh-completion.helloWorld', () => {
-		// The code you place here will be executed every time your command is executed
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from VSCode中文代码补全!');
-	});
-
-	context.subscriptions.push(disposable);
+// 扩展激活时调用
+export function activate(context: vsc.ExtensionContext) {
+	try {
+		context.subscriptions.push(
+			vsc.languages.registerCompletionItemProvider(
+				[
+					{ scheme: 'file', language: '*' },
+					{ scheme: 'untitled', language: '*' },
+					{ scheme: 'file', language: '*', notebookType: '*' },
+					{ scheme: 'untitled', language: '*', notebookType: '*' },
+				],
+				{ provideCompletionItems: 补全器实现, resolveCompletionItem: () => null }
+			)
+		);
+		env.加载配置();
+		// 当配置修改时刷新配置
+		vsc.workspace.onDidChangeConfiguration(async () => {
+			env.加载配置();
+		});
+		vsc.log('中文代码补全: 插件已启动');
+	} catch (e) {
+		console.error(e);
+		vsc.window.showInformationMessage(`中文代码补全: 启动失败：` + e);
+	}
 }
 
-// This method is called when your extension is deactivated
-export function deactivate() {}
+// 扩展停用时调用
+export function deactivate() { }
