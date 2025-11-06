@@ -2,7 +2,7 @@
   "name": "vscode-zh-completion",
   "displayName": "中文代码补全",
   "description": "使用拼音首字母，高效补全中文变量、方法与类名，提升中文编码体验。",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "Chinese",
   "license": "BSD-3-Clause",
   "engines": {
@@ -19,7 +19,7 @@
     "configuration": {
       "title": "中文代码补全",
       "properties": {
-        "中文代码补全.元音首字母通配符": {
+        "中文代码补全.元音通配符": {
           "description": "适用于音形输入法（如声笔）。当拼音首字母为 a、e、i、o、u 等元音时，部分输入法使用 v 作为通配符替代，启用此设置可匹配此类输入习惯。",
           "type": "string"
         }

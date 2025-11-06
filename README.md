@@ -10,9 +10,9 @@ VSCode Marketplace：[vscode-zh-completion](https://marketplace.visualstudio.com
 
 配置参数：
 
-|     参数名称     |    默认值    |        可选项        |                   详细说明                         |
-| --------------- | ---------- | -------------------- | ------------------------------------------------- |
-|  元音首字母通配符 |             |  依据输入法（如 'v'）  | 为了照顾「音形输入法」用户的输入习惯（a、e、i、o、u 等元音首字母的替换符）|
+|     参数名     |            参数值              |                      说明                         |
+| ------------- | ----------------------------- | ------------------------------------------------- |
+|    元音通配符   |   依输入法而定（如：声笔用 'v'）  | a、e、i、o、u 等元音首字母的替换符（为照顾「音形类输入法」的用户习惯）|
 
 ## 功能简介
 
@@ -43,13 +43,14 @@ VSCode Marketplace：[vscode-zh-completion](https://marketplace.visualstudio.com
 
 [CHANGELOG](CHANGELOG.md)
 
-## 感谢
-
-- [中文代码快速补全](https://gitee.com/Program-in-Chinese/vscode_Chinese_Input_Assistant) 提供的参考实现
-- [PYFL](https://www.npmjs.com/package/pyfl) 提供的字典压缩算法
-- 大家使用过程中提出的宝贵意见（欢迎大家来代码仓库递交 issue 和 BUG）
-
 ## 协议
 
-本项目使用 BSD3 协议.
+本项目基于 BSD 3-Clause 许可证开源，敬请放心使用。
 
+## 感谢
+
+本项目的开发得益于以下优秀项目与技术的启发与支持：
+
+- [中文代码快速补全](https://gitee.com/Program-in-Chinese/vscode_Chinese_Input_Assistant)：我们的参考实现
+- [PYFL](https://www.npmjs.com/package/pyfl)：为本项目提供了高效的词典压缩算法
+- 每一位用户：感谢您的使用，[欢迎提交 Issue 与 Bug 报告](https://github.com/remyzane/vscode-zh-completion/issues)
