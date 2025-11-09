@@ -16,7 +16,8 @@ export async function 获得系统补全(
     var 系统补全 = await vsc.commands.executeCommand<vsc.CompletionList>(
         'vscode.executeCompletionItemProvider',
         document.uri,
-        矫正补全锚点(document, position)
+        position
+        // 矫正补全锚点(document, position)
     );
     return 系统补全;
 }
@@ -45,16 +46,23 @@ export function 获得输入值(): string {
  * @returns 推荐的补全锚点位置
  */
 export function 矫正补全锚点(文档: vsc.TextDocument, 位置: vsc.Position): vsc.Position {
+    log(`位置：${位置.line}, ${位置.character}`)
     const 行文本 = 文档.lineAt(位置.line).text;
     const 当前字符索引 = 位置.character;
     const 语言标识 = 文档.languageId;
-    // ts、js 语言服务器不做输入过滤，无须更改补全锚点（executeCompletionItemProvider 会返回所有补全候选项）
+    // ts、js 语言服务器不做输入过滤，无须更改补全锚点（executeCompletionItemProvider 会返回所有补全项）
     if (语言标识 === 'typescript' || 语言标识 === 'javascript') {
         return 位置;
     }
     // 获取该语言的补全锚点配置，若无则使用默认配置
     const 语言 = (语言配置表 as { [key: string]: 语言T })[语言标识];
     const 配置 = 语言.补全锚点配置 || (通用语言配置.补全锚点配置 as 补全锚点配置);
+    log(`语言：${JSON.stringify(语言)}  `);
+    log(`配置：${JSON.stringify(配置)}  `);
+    /**
+    [2025/11/9 01:18:02] 语言：{"补全锚点配置":{"语法边界字符":{},"最大回退距离":30},"触发字符":[".",":",",","(","[","{","="]}
+    [2025/11/9 01:18:02] 配置：{"语法边界字符":{},"最大回退距离":30}
+     */
     const 最大回退距离 = 配置.最大回退距离 || 20;
     let 当前索引 = 当前字符索引 - 1;
     let 已回退步数 = 0;
@@ -75,8 +83,10 @@ export function 矫正补全锚点(文档: vsc.TextDocument, 位置: vsc.Positio
         while (探测位置 < 当前字符索引 && /\s/.test(行文本[探测位置])) {
             探测位置++;
         }
+        log(`矫正补全锚点后位置 x：${位置.line}, ${探测位置}`);
         return new vsc.Position(位置.line, 探测位置);
     }
     // 步骤三：未找到语法边界，则返回当前标识符的起始位置
+    log(`矫正补全锚点后位置：${位置.line}, ${当前索引 + 1}`);
     return new vsc.Position(位置.line, 当前索引 + 1);
 }

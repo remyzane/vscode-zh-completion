@@ -20,6 +20,7 @@ export function 专项补全器(context: vsc.ExtensionContext, 语言: string, �
         )
     );
 }
+
 export function 通用补全器(context: vsc.ExtensionContext) {
     context.subscriptions.push(
         vsc.languages.registerCompletionItemProvider(
@@ -29,6 +30,7 @@ export function 通用补全器(context: vsc.ExtensionContext) {
         )
     );
 }
+
 export async function 补全器实现(
     document: vsc.TextDocument, position: vsc.Position, token: vsc.CancellationToken, context: vsc.CompletionContext
 ) {
@@ -51,18 +53,15 @@ export async function 补全器实现(
     // - 过滤不包含中文的补全项.
     // - 过滤现在正在输入的字段.
     // - 过滤自定义的片段(Snippet), 因为无论这个函数是否返回结果, vsc总会带上它们.
-    let 补全列表: vsc.CompletionItem[] = uniqWith((a, b) => a.label === b.label, 系统补全器.items)
-        .filter((补全项) => /[\u4e00-\u9fa5\u3007]/.test(补全项.label.toString())) // 包含中文
-        .filter((补全项) => 补全项.label !== 输入值)
-        .filter((补全项) => 补全项.kind !== vsc.CompletionItemKind.Snippet);
+    let 补全列表: vsc.CompletionItem[] = uniqWith((a, b) => a.label === b.label, 系统补全器.items);
+    // .filter((补全项) => /[\u4e00-\u9fa5\u3007]/.test(补全项.label.toString())) // 包含中文
+    // .filter((补全项) => 补全项.label !== 输入值)
+    // .filter((补全项) => 补全项.kind !== vsc.CompletionItemKind.Snippet);
 
     // 设置最终结果
     for (var 补全项 of 补全列表) {
-        const 补全内容 = 补全项.label.toString();
-        const 首字母版 = 转拼音首字母(补全内容 as string || '');
-        补全项.filterText = 首字母版;
-        补全项.insertText = 补全内容;
-        // vsc.log(`${JSON.stringify(补全项)}`);
+        vsc.log(`补全项：${JSON.stringify(补全项)}`);
+        env.编码器.生成补全码(补全项);
     }
     return new vsc.CompletionList(补全列表, true);
 }
@@ -77,21 +76,6 @@ export async function 通用补全器实现(
     return await 补全器实现(document, position, token, context);
 }
 
-/** 将字符串中的中文转换为拼音首字母：'中国 ❤ china' → 'zg ❤ china' */
-export function 转拼音首字母(text: string) {
-    let result = [];
-    for (let i = 0; i < text.length; i++) {
-        let unicode = text.charCodeAt(i);
-        let char = text.charAt(i);
-        if (unicode >= 19968 && unicode <= 40869) {
-            char = env.所有汉字拼音首字母.charAt(unicode - 19968);
-        }
-        result.push(char);
-    }
-    return result.join("");
-}
-
-
 
 // context.subscriptions.push(
 // 	vsc.languages.registerCompletionItemProvider(
@@ -104,32 +88,3 @@ export function 转拼音首字母(text: string) {
 // 		{ provideCompletionItems: 补全器实现, resolveCompletionItem: () => null }
 // 	)
 // );
-
-
-// var 高权重列表: vsc.CompletionItem[] = [];  // 和输入值完全一样的、以输入值开头的
-// var 低权重列表: vsc.CompletionItem[] = [];  // 包含输入值的
-// for (const 补全项 of 系统补全器.items) {
-//     const 补全项内容 = 补全项.label as string;
-//     const 补全项小写内容 = 补全项内容.toLowerCase();
-//     if (补全项内容 === 输入值 || 补全项小写内容 === 输入值) {
-//         // 高权重列表.unshift(new vsc.CompletionItem(补全项内容, vsc.CompletionItemKind.Text));
-//         高权重列表.unshift(补全项);
-//     } else if (补全项内容.startsWith(输入值) || 补全项小写内容.startsWith(输入值)) {
-//         高权重列表.push(补全项);
-//     } else {
-//         const 首字母版 = pyfl(补全项内容 as string || '');
-//         const 转小写首字母 = 首字母版.toLowerCase();
-//         if (首字母版 === 输入值 || 转小写首字母 === 输入值) {
-//             高权重列表.unshift(补全项);
-//         } else if (首字母版.startsWith(输入值) || 转小写首字母.startsWith(输入值)) {
-//             高权重列表.push(补全项);
-//         } else {
-//             if (首字母版.includes(输入值) || 转小写首字母.includes(输入值)) {
-//                 低权重列表.push(补全项);
-//             } else if (补全项内容.includes(输入值) || 补全项小写内容.includes(输入值)) {
-//                 低权重列表.push(补全项);
-//             }
-//         }
-//     }
-// }
-// return new vsc.CompletionList(高权重列表.concat(低权重列表), true);

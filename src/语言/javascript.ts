@@ -1,7 +1,7 @@
 import { 语言T } from '.';
 
 export const javascript: 语言T = {
-    补全锚点配置: undefined,    // 无需配置，js 语言服务器不做输入过滤（executeCompletionItemProvider 会返回所有补全候选项）
+    补全锚点配置: undefined,    // 无需配置，js 语言服务器不做输入过滤（executeCompletionItemProvider 会返回所有补全项）
     触发字符: [
         // '.', ':', ',', '(', '[', '{', '<', '=',
         '.',    // 成员访问（如 obj.）
