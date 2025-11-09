@@ -12,11 +12,7 @@ def 五笔码表生成()-> str:
         index = 五笔98.index(char)
         code = 五笔98[index - 4: index]
         if code[0] in string.ascii_uppercase:
-            result_chars.append(code[0])
-        elif code[1] in string.ascii_uppercase:
-            result_chars.append(code[1])
-        elif code[2] in string.ascii_uppercase:
-            result_chars.append(code[2])
+            result_chars.append(code[0])        # 四字母编码（如：GGLL一）
         else:
-            result_chars.append(code[3])
+            result_chars.append(code[1])        # 三字母编码（如：SGH丁）
     return ''.join(result_chars).lower()
