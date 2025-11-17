@@ -19,7 +19,7 @@
   "publisher": "chinese",
   "license": "BSD-3-Clause",
   "engines": {
-    "vscode": "^1.105.0"
+    "vscode": "^1.106.1"
   },
   "categories": [
     "Other"
@@ -65,9 +65,9 @@
     "@types/mocha": "^10.0.10",
     "@types/node": "~22.19.1",
     "@types/ramda": "^0.31.1",
-    "@types/vscode": "^1.106.0",
-    "@typescript-eslint/eslint-plugin": "^8.46.4",
-    "@typescript-eslint/parser": "^8.46.4",
+    "@types/vscode": "^1.106.1",
+    "@typescript-eslint/eslint-plugin": "^8.47.0",
+    "@typescript-eslint/parser": "^8.47.0",
     "@vscode/test-cli": "^0.0.12",
     "@vscode/test-electron": "^2.5.2",
     "esbuild": "^0.25.12",
