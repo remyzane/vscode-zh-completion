@@ -1,7 +1,36 @@
+import * as vsc from '../../接口封装';
 import { 语言基类 } from '../基类';
 
 
 export class 语言实现 extends 语言基类 {
+    private 补全缓存KEY?: string;
+    private 补全缓存内容?: vsc.CompletionList<vsc.CompletionItem>;
+
+    async 获得系统补全(文档: vsc.TextDocument, 位置: vsc.Position): Promise<vsc.CompletionList<vsc.CompletionItem>> {
+        const 系统补全 = await super.获得系统补全(文档, 位置);
+        // 获取当前行的文本
+        const 行文本 = 文档.lineAt(位置.line).text;
+        // 输入 from . 或 from .. 或 from ..xx. 时，可以获得补全项（先缓存起来）
+        if (行文本.startsWith('from ') && 行文本[位置.character - 1] === '.') {
+            this.补全缓存KEY = 行文本.substring(0, 位置.character);
+            this.补全缓存内容 = 系统补全;
+        } else {
+            if (this.补全缓存KEY) {
+                // 输入 from .xx 时，使用 from . 时缓存的补全项
+                if (行文本.startsWith(this.补全缓存KEY)) {
+                    // 输入 from .xx import 时，可以正常获取系统补全了，无需使用缓存
+                    if (!行文本.includes(' import')) {
+                        return this.补全缓存内容 as vsc.CompletionList<vsc.CompletionItem>;
+                    }
+                } else { // 已经切换到其他行（非导入行），则清除缓存
+                    this.补全缓存KEY = undefined;
+                    this.补全缓存内容 = undefined;
+                }
+
+            }
+        }
+        return 系统补全;
+    }
 
     constructor() {
         super();

@@ -26,20 +26,20 @@ export function 注册未知语言补全器(context: vsc.ExtensionContext) {
 }
 
 export async function 补全实现(
-    document: vsc.TextDocument, position: vsc.Position, token: vsc.CancellationToken, context: vsc.CompletionContext
+    文档: vsc.TextDocument, 位置: vsc.Position, token: vsc.CancellationToken, context: vsc.CompletionContext
 ) {
     const 输入值 = vsc.获得输入值();
 
     if (env.获得系统补全中) { return []; }  // 避免无限循环（调用'获得系统补全'时会调用'提供补全'函数, 这会导致无限循环）
 
-    vsc.log(`补全「${输入值}」${document.fileName}, ${document.languageId}, ${position.line}:${position.character}`);
+    vsc.log(`补全「${输入值}」${文档.fileName}, ${文档.languageId}, ${位置.line}:${位置.character}`);
 
-    const 语言 = 语言配置表[document.languageId] || 通用语言实现;
+    const 语言 = 语言配置表[文档.languageId] || 通用语言实现;
 
     // 获得系统补全
     env.获得系统补全中 = true;
     try {
-        var 系统补全器 = await 语言.获得系统补全(document, position);
+        var 系统补全器 = await 语言.获得系统补全(文档, 位置);
     } finally {
         env.获得系统补全中 = false; // 即使 await 抛错，也会执行
     }
@@ -51,17 +51,17 @@ export async function 补全实现(
 
     const 补全列表 = 语言.生成中文补全(env.编码器, 系统补全列表, 输入值);
 
-    // for (var 补全项 of 补全列表) { vsc.log(`补全项：${JSON.stringify(补全项)}`); }
+    // for (const 补全项 of 补全列表) { vsc.log(`补全项：${JSON.stringify(补全项)}`); }
 
     return new vsc.CompletionList(补全列表, true);
 }
 
 export async function 未知语言补全实现(
-    document: vsc.TextDocument, position: vsc.Position, token: vsc.CancellationToken, context: vsc.CompletionContext
+    文档: vsc.TextDocument, 位置: vsc.Position, token: vsc.CancellationToken, context: vsc.CompletionContext
 ) {
     // 如果语言已配置，则不做处理（避免重复处理）
-    if (已知语言.has(document.languageId)) {
+    if (已知语言.has(文档.languageId)) {
         return [];
     }
-    return await 补全实现(document, position, token, context);
+    return await 补全实现(文档, 位置, token, context);
 }

@@ -11,13 +11,13 @@ export function log(msg: string) {
 }
 
 export function 获得输入值(): string {
-    var 编辑器 = vsc.window.activeTextEditor;
+    const 编辑器 = vsc.window.activeTextEditor;
     if (!编辑器) {
         return '';
     }
-    var 光标位置 = 编辑器.selections[0].anchor;
-    var 文件 = 编辑器.document;
-    var 范围 = 文件.getWordRangeAtPosition(光标位置);
+    const 光标位置 = 编辑器.selections[0].anchor;
+    const 文件 = 编辑器.document;
+    const 范围 = 文件.getWordRangeAtPosition(光标位置);
     if (范围 === null) {
         return '';
     }

@@ -4,7 +4,7 @@ import { 语言基类 } from '../基类';
 
 export class 语言实现 extends 语言基类 {
 
-    protected 需要矫正锚点(document: vsc.TextDocument): boolean {
+    protected 需要矫正锚点(文档: vsc.TextDocument): boolean {
         return false;
     }
     constructor() {

@@ -15,8 +15,8 @@ const 不需要矫正锚点: string[] = [
  * 设计理念：宁可多回退、多触发，也不漏掉补全机会。
  */
 export class 通用语言实现 extends 语言基类 {
-    protected 需要矫正锚点(document: vsc.TextDocument): boolean {
-        if (不需要矫正锚点.includes(document.languageId)) {
+    protected 需要矫正锚点(文档: vsc.TextDocument): boolean {
+        if (不需要矫正锚点.includes(文档.languageId)) {
             return false;
         } else {
             return true;
