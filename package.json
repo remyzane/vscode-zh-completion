@@ -1,7 +1,7 @@
 {
   "name": "vscode-zh-completion",
   "displayName": "中文代码补全",
-  "description": "使用拼音首字母，高效补全中文变量、方法与类名，提升中文编码体验。",
+  "description": "无须切换输入法，高效补全中文变量、方法与类名，提升中文编码体验。",
   "keywords": [
     "中文",
     "代码补全",
@@ -63,11 +63,11 @@
   },
   "devDependencies": {
     "@types/mocha": "^10.0.10",
-    "@types/node": "~22.19.0",
+    "@types/node": "~22.19.1",
     "@types/ramda": "^0.31.1",
-    "@types/vscode": "^1.105.0",
-    "@typescript-eslint/eslint-plugin": "^8.46.3",
-    "@typescript-eslint/parser": "^8.46.3",
+    "@types/vscode": "^1.106.0",
+    "@typescript-eslint/eslint-plugin": "^8.46.4",
+    "@typescript-eslint/parser": "^8.46.4",
     "@vscode/test-cli": "^0.0.12",
     "@vscode/test-electron": "^2.5.2",
     "esbuild": "^0.25.12",
