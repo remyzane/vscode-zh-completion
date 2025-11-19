@@ -32,14 +32,15 @@ export async function 补全实现(
 
     if (env.获得系统补全中) { return []; }  // 避免无限循环（调用'获得系统补全'时会调用'提供补全'函数, 这会导致无限循环）
 
-    vsc.log(`补全「${输入值}」${文档.fileName}, ${文档.languageId}, ${位置.line}:${位置.character}`);
-
     const 语言 = 语言配置表[文档.languageId] || 通用语言实现;
+    const 锚点 = 语言.需要矫正锚点(文档) ? vsc.矫正补全锚点(文档, 位置) : 位置;
+
+    vsc.log(`补全「${输入值}」${文档.fileName}, ${文档.languageId}, ${锚点.line}:${锚点.character}`);
 
     // 获得系统补全
     env.获得系统补全中 = true;
     try {
-        var 系统补全器 = await 语言.获得系统补全(文档, 位置);
+        var 系统补全器 = await 语言.获得系统补全(文档, 位置, 锚点);
     } finally {
         env.获得系统补全中 = false; // 即使 await 抛错，也会执行
     }

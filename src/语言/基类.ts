@@ -5,15 +5,17 @@ export abstract class 语言基类 {
     public 触发字符!: string[];
     public 补全锚点配置?: 锚点配置T;
 
-    protected 需要矫正锚点(文档: vsc.TextDocument): boolean {
+    public 需要矫正锚点(文档: vsc.TextDocument): boolean {
         return true;
     }
 
-    async 获得系统补全(文档: vsc.TextDocument, 位置: vsc.Position): Promise<vsc.CompletionList<vsc.CompletionItem>> {
+    async 获得系统补全(
+        文档: vsc.TextDocument, 光标位置: vsc.Position, 补全锚点: vsc.Position
+    ): Promise<vsc.CompletionList<vsc.CompletionItem>> {
         const 系统补全 = await vsc.commands.executeCommand<vsc.CompletionList>(
             'vscode.executeCompletionItemProvider',
             文档.uri,
-            this.需要矫正锚点(文档) ? vsc.矫正补全锚点(文档, 位置) : 位置
+            补全锚点
         );
         return 系统补全;
     }

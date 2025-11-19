@@ -6,13 +6,15 @@ export class 语言实现 extends 语言基类 {
     private 补全缓存KEY?: string;
     private 补全缓存内容?: vsc.CompletionList<vsc.CompletionItem>;
 
-    async 获得系统补全(文档: vsc.TextDocument, 位置: vsc.Position): Promise<vsc.CompletionList<vsc.CompletionItem>> {
-        const 系统补全 = await super.获得系统补全(文档, 位置);
+    async 获得系统补全(
+        文档: vsc.TextDocument, 光标位置: vsc.Position, 补全锚点: vsc.Position
+    ): Promise<vsc.CompletionList<vsc.CompletionItem>> {
+        const 系统补全 = await super.获得系统补全(文档, 光标位置, 补全锚点);
         // 获取当前行的文本
-        const 行文本 = 文档.lineAt(位置.line).text;
+        const 行文本 = 文档.lineAt(光标位置.line).text;
         // 输入 from . 或 from .. 或 from ..xx. 时，可以获得补全项（先缓存起来）
-        if (行文本.startsWith('from ') && 行文本[位置.character - 1] === '.') {
-            this.补全缓存KEY = 行文本.substring(0, 位置.character);
+        if (行文本.startsWith('from ') && 行文本[光标位置.character - 1] === '.') {
+            this.补全缓存KEY = 行文本.substring(0, 光标位置.character);
             this.补全缓存内容 = 系统补全;
         } else {
             if (this.补全缓存KEY) {
@@ -34,7 +36,7 @@ export class 语言实现 extends 语言基类 {
 
     constructor() {
         super();
-        this.触发字符 = ['.', ':', ',', '(', '[', '{', '='];
+        this.触发字符 = ['.', ':', ',', '(', '[', '{', '=', ' '];
         this.补全锚点配置 = {
             是否标识符字符: (字符) => /[a-zA-Z0-9_]/.test(字符),
             语法边界字符: new Set([
@@ -45,6 +47,7 @@ export class 语言实现 extends 语言基类 {
                 '[',    // 索引或切片补全（如 arr[ 或 df['col']）
                 '{',    // 字典/集合字面量键补全（如 {'status': ）
                 '=',    // 关键字参数赋值（如 func(timeout=)）
+                ' ',    // 类静态成员或Model字段定义
             ]),
             最大回退距离: 30
         };

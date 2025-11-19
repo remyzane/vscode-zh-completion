@@ -9,7 +9,7 @@ const 不需要矫正锚点: string[] = [];
  */
 export class 通用语言实现 extends 语言基类 {
 
-    protected 需要矫正锚点(文档: vsc.TextDocument): boolean {
+    public 需要矫正锚点(文档: vsc.TextDocument): boolean {
         if (不需要矫正锚点.includes(文档.languageId)) {
             return false;
         } else {
