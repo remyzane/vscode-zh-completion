@@ -123,8 +123,15 @@ export class 编码器 extends 补全码编码器 {
                                 // 空格表示需要查码表
                                 补全码组.push(this.现行码表.charAt(补全项文本.charCodeAt(j + k) - 19968));
                             } else {
-                                // 直接使用字母
-                                补全码组.push(valChar);
+                                if (this.输入习惯 === '声笔简拼' || this.输入习惯 === '声笔简码') {
+                                    if ('aeiou'.indexOf(valChar) > -1) {
+                                        补全码组.push('v');  // 元音用 v 代替
+                                    } else {
+                                        补全码组.push(valChar);  // 非元音使用多音字码表
+                                    }
+                                } else {
+                                    补全码组.push(valChar);  // 多音字使用多音字码表
+                                }
                             }
                         }
                         j += 匹配长度 - 1; // 跳过整个短语；因为for循环还有j++，这里要减1
