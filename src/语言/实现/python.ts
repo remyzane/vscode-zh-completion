@@ -16,12 +16,13 @@ export class 语言实现 extends 语言基类 {
         if (行文本.startsWith('from ') && 行文本[光标位置.character - 1] === '.') {
             this.补全缓存KEY = 行文本.substring(0, 光标位置.character);
             this.补全缓存内容 = 系统补全;
+            return { items: [] };   // 为了避免重复输出（from . 时，就算我们提供了，系统补全项还是会自己输出）
         } else {
             if (this.补全缓存KEY) {
                 // 输入 from .xx 时，使用 from . 时缓存的补全项
                 if (行文本.startsWith(this.补全缓存KEY)) {
                     // 输入 from .xx import 时，可以正常获取系统补全了，无需使用缓存
-                    if (!行文本.includes(' import')) {
+                    if (!行文本.substring(0, 光标位置.character).includes(' import ')) {
                         return this.补全缓存内容 as vsc.CompletionList<vsc.CompletionItem>;
                     }
                 } else { // 已经切换到其他行（非导入行），则清除缓存
