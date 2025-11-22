@@ -18,7 +18,9 @@ export abstract class 补全码编码器 {
     abstract 生成补全码(补全项: vsc.CompletionItem, 补全项文本: string): void;
 
     _生成补全码(补全项: vsc.CompletionItem): void {
-        const 补全项文本 = (补全项.label as any).label ? (补全项.label as any).label : 补全项.label;
+        const 补全项文本 = (
+            (补全项.label as vsc.CompletionItemLabel).label ? (补全项.label as vsc.CompletionItemLabel).label : 补全项.label
+        ) as string; // 调用方保证有仅有这两种情况，最后一定能得到string
         this.生成补全码(补全项, 补全项文本);
         // 中文项前排显示（要求首字符为中文）
         if (/^[\u4e00-\u9fa5]/.test(补全项文本)) {

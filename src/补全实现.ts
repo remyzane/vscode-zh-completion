@@ -48,6 +48,9 @@ export async function 补全实现(
     // 去重
     let 系统补全列表: vsc.CompletionItem[] = uniqWith((a, b) => a.label === b.label, 系统补全器.items);
 
+    // 检查类型
+    系统补全列表 = 系统补全列表.filter(补全项 => (typeof 补全项.label === 'string' || typeof 补全项.label.label === 'string'));
+
     // for (const 补全项 of 系统补全列表) { vsc.log(`系统补全项：${JSON.stringify(补全项)}`); }
 
     const 补全列表 = 语言.生成中文补全(env.编码器, 系统补全列表, 输入值);
