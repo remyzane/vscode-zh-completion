@@ -1,5 +1,6 @@
 import * as vsc from '../接口封装';
 import { 补全码编码器 } from '.';
+import { 拼音多音字词表 } from './拼音多音字词表';
 
 function 切分文本(输入文本: string) {
     // 需返回的分块数据
@@ -82,24 +83,66 @@ export class 编码器 extends 补全码编码器 {
             if (i % 2 === 首块是否非汉字) {
                 // 汉字块
                 const [块start, 块end] = 切分块[i];
-                if (this.输入习惯 === '声笔简码' && (块end - 块start) > 4) {
-                    // 只保留前3个和最后一个
-                    补全码组.push(this.现行码表.charAt(补全项文本.charCodeAt(块start) - 19968));
-                    补全码组.push(this.现行码表.charAt(补全项文本.charCodeAt(块start + 1) - 19968));
-                    补全码组.push(this.现行码表.charAt(补全项文本.charCodeAt(块start + 2) - 19968));
-                    补全码组.push(this.现行码表.charAt(补全项文本.charCodeAt(块end - 1) - 19968));
-                } else {
-                    for (let j = 块start; j < 块end; j++) {
+                for (let j = 块start; j < 块end; j++) {
+                    let 是否匹配 = false;
+                    let 匹配长度 = 0;
+                    let 短语 = '';
+                    // 优先匹配4字符短语
+                    if (j + 4 <= 块end) {
+                        const key = 补全项文本.slice(j, j + 4);
+                        if (Object.hasOwn(拼音多音字词表, key)) {
+                            是否匹配 = true;
+                            匹配长度 = 4;
+                            短语 = key;
+                        }
+                    }
+                    // 未匹配则尝试3字符
+                    if (!是否匹配 && j + 3 <= 块end) {
+                        const key = 补全项文本.slice(j, j + 3);
+                        if (Object.hasOwn(拼音多音字词表, key)) {
+                            是否匹配 = true;
+                            匹配长度 = 3;
+                            短语 = key;
+                        }
+                    }
+                    // 未匹配则尝试2字符
+                    if (!是否匹配 && j + 2 <= 块end) {
+                        const key = 补全项文本.slice(j, j + 2);
+                        if (Object.hasOwn(拼音多音字词表, key)) {
+                            是否匹配 = true;
+                            匹配长度 = 2;
+                            短语 = key;
+                        }
+                    }
+                    if (是否匹配) {
+                        // 处理匹配到的短语
+                        const value = 拼音多音字词表[短语 as keyof typeof 拼音多音字词表];
+                        for (let k = 0; k < 匹配长度; k++) {
+                            const valChar = value.charAt(k);
+                            if (valChar === ' ') {
+                                // 空格表示需要查码表
+                                补全码组.push(this.现行码表.charAt(补全项文本.charCodeAt(j + k) - 19968));
+                            } else {
+                                // 直接使用字母
+                                补全码组.push(valChar);
+                            }
+                        }
+                        j += 匹配长度 - 1; // 跳过整个短语；因为for循环还有j++，这里要减1
+                    } else {
+                        // 无匹配短语，单字符查码表
                         补全码组.push(this.现行码表.charAt(补全项文本.charCodeAt(j) - 19968));
                     }
+                }
+                if (this.输入习惯 === '声笔简码' && (块end - 块start) > 4) {
+                    // 只保留前3个和最后一个
+                    补全码组.splice(块start + 3, 块end - 块start - 4); // 删除中间的 块.length-4 个字符
                 }
             } else {
                 // 非汉字块
                 补全码组.push(补全项文本.slice(切分块[i][0], 切分块[i][1]));
             }
         }
-        const 补全码 = 补全码组.join("");
-        补全项.filterText = 补全码;
+        补全项.filterText = 补全码组.join("");
         // 补全项.insertText = 补全项文本;
     }
 }

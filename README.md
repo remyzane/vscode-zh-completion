@@ -30,7 +30,7 @@
 
 **按需加载**：仅加载你配置的输入方案（如拼音 / 五笔）
 
-**极简码表**：特别设计的码表（20 KB），内存占用极低
+**极简码表**：特别设计的码表（20 KB），内存占用极低。（拼音模式因为要识别多音字，需要734 KB的码表，也非常小巧）
 
 **减少冗余**：中文命名天然具备语义，显著降低对英文注释的依赖，在**不增加中英文切换次数的前提下，同时提升代码可读性与输入效率**。
 
@@ -60,4 +60,5 @@
 
 - [中文代码快速补全](https://gitee.com/Program-in-Chinese/vscode_Chinese_Input_Assistant)：主要技术参考
 - [PYFL](https://www.npmjs.com/package/pyfl)：优秀的拼音首字母方案
+- [PinYin.js](https://github.com/sxei/pinyinjs)：优秀的汉字转拼音方案，多音字码表魔改自这里。同时该项目也是`PYFL`项目极简首字母码表的来源。
 - 正在使用的你：非常感谢你的尝试，[如果你遇到任何问题，欢迎随时告诉我](https://github.com/remyzane/vscode-zh-completion/issues)
