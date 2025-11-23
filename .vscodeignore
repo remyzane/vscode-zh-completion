@@ -2,7 +2,10 @@
 .vscode-test/**
 out/**
 node_modules/**
+script/*.py
 src/**
+publish.sh
+贡献指南.md
 .gitignore
 .yarnrc
 esbuild.js
