@@ -22,7 +22,7 @@
 
 ### ✅ 专注一件事
 
-**中文标识符的高效补全** —— 变量、函数、类名无需切换输入法即可直接输入，命名与注释仍使用你习惯的输入法。
+**中文命名的高效补全** —— 变量、函数、类名无需切换输入法即可直接输入，命名与注释仍使用你习惯的输入法。
 
 支持拼音、五笔等多种输入习惯，**只需一次选择，插件即自动加载对应码表并配置好补全逻辑**。
 
@@ -40,11 +40,13 @@
 
 无缝适配 Python、JavaScript、Java、C++ 等主流编程语言
 
-## 效果图
+[效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/python.png)
 
 ![](images/python.png)
 
-为保持插件轻量，此处仅提供一张代表截图以供参考。
+## 推荐
+
+[中文命名规范](https://gitee.com/remyzane/zh-code-spec/tree/master)
 
 ## 版本更新说明
 
@@ -61,4 +63,4 @@
 - [中文代码快速补全](https://gitee.com/Program-in-Chinese/vscode_Chinese_Input_Assistant)：主要技术参考
 - [PYFL](https://www.npmjs.com/package/pyfl)：优秀的拼音首字母方案
 - [PinYin.js](https://github.com/sxei/pinyinjs)：优秀的汉字转拼音方案，多音字码表魔改自这里。同时该项目也是`PYFL`项目极简首字母码表的来源。
-- 正在使用的你：非常感谢你的尝试，[如果你遇到任何问题，欢迎随时告诉我](https://github.com/remyzane/vscode-zh-completion/issues)
+- 正在使用的你：非常感谢你的尝试，[如果你遇到任何问题，欢迎随时告诉我](https://gitee.com/remyzane/vscode-zh-completion/issues)

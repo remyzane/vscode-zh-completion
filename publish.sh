@@ -7,8 +7,8 @@ read token
 
 if [ -z "$token" ]; then
   # 如果 token 为空，则只打包，不发布
-  vsce package --no-dependencies
+  vsce package --no-dependencies --baseImagesUrl https://gitee.com/remyzane/vscode-zh-completion/raw/main/
 else
   # 如果 token 不为空，则打包 + 发布
-  vsce publish --no-dependencies -p $token
+  vsce publish --no-dependencies -p $token --baseImagesUrl https://gitee.com/remyzane/vscode-zh-completion/raw/main/
 fi
