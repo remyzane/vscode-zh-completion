@@ -46,7 +46,7 @@
 
 ## 推荐
 
-[中文命名规范](https://gitee.com/remyzane/zh-code-spec/tree/master)
+[中文命名规范](https://gitee.com/remyzane/zh-code-spec/blob/master/README.md)
 
 ## 版本更新说明
 
