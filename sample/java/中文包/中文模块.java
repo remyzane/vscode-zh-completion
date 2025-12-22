@@ -1,8 +1,7 @@
 package 中文包;
 
 /**
- * 中文命名样例 - Java版本
- * 使用Java现代特性：record、enum、sealed接口、switch表达式等
+ * 中文命名样例 - Java 17
  */
 
 // 枚举示例 - 使用Java enum
@@ -85,9 +84,9 @@ public class 中文模块 {
 
         // Stream API示例
         var 颜色列表 = java.util.Arrays.stream(颜色枚举.values())
-            .filter(颜色 -> 颜色 != 颜色枚举.红色)
-            .map(颜色 -> "我喜欢" + 颜色.name())
-            .toList();
+                .filter(颜色 -> 颜色 != 颜色枚举.红色)
+                .map(颜色 -> "我喜欢" + 颜色.name())
+                .toList();
 
         颜色列表.forEach(System.out::println);
     }
@@ -103,8 +102,8 @@ public class 中文模块 {
 
         // 使用索引和Stream
         水果列表.stream()
-            .map(水果 -> "第" + (水果列表.indexOf(水果) + 1) + "个水果是" + 水果)
-            .forEach(System.out::println);
+                .map(水果 -> "第" + (水果列表.indexOf(水果) + 1) + "个水果是" + 水果)
+                .forEach(System.out::println);
     }
 
     // Switch表达式示例 (Java 14+)
@@ -154,17 +153,16 @@ public class 中文模块 {
     public static java.util.List<Integer> 生成平方数列表() {
         var 数字列表 = java.util.List.of(1, 2, 3, 4, 5);
         return 数字列表.stream()
-            .filter(数字 -> 数字 % 2 == 1)  // 奇数
-            .map(数字 -> 数字 * 数字)        // 平方
-            .toList();
+                .filter(数字 -> 数字 % 2 == 1) // 奇数
+                .map(数字 -> 数字 * 数字) // 平方
+                .toList();
     }
 
     // 多态示例
     public static void 动物演示() {
         var 动物列表 = java.util.List.of(
-            new 狗("旺财"),
-            new 猫("咪咪")
-        );
+                new 狗("旺财"),
+                new 猫("咪咪"));
 
         for (var 动物 : 动物列表) {
             System.out.print(动物.get名称() + ": ");
