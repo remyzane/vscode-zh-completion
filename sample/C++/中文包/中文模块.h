@@ -20,7 +20,7 @@ namespace 中文包
         蓝色 = 3
     };
 
-    // 学生结构体（类似 Python 的 namedtuple）
+    // 学生结构体
     struct 学生元组
     {
         std::string 姓名;
@@ -72,7 +72,6 @@ namespace 中文包
     };
 
     // 主要函数声明
-    void 中文函数(const std::string &参数1, const std::string &参数2);
     void 遍历列表();
     void 匹配示例(int 值);
     double 计算面积(const std::string &形状, double 半径 = 1.0);
@@ -87,6 +86,10 @@ namespace 中文包
 
     // 异常处理示例
     double 除法运算(int 被除数, int 除数);
+
+    // 演示函数声明
+    void 演示模板函数();
+    void 演示智能指针();
 
 } // namespace 中文包
 

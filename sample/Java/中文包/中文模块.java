@@ -9,35 +9,6 @@ import java.util.List;
 
 public class 中文模块 {
 
-    public static void 中文函数(String 参数1, String 参数2) {
-        // 枚举示例
-        System.out.println("喜欢的颜色: " + 颜色枚举.红色.name());
-
-        学生元组 学生 = new 学生元组("李四", 17, "高二一班");
-        System.out.println("学生信息: " + 学生.toString());
-
-        System.out.println(参数1);
-        System.out.println(参数2);
-    }
-
-    // for 循环示例
-    public static void 遍历列表() {
-        List<String> 水果列表 = new ArrayList<>();
-        水果列表.add("苹果");
-        水果列表.add("香蕉");
-        水果列表.add("橙子");
-        水果列表.add("葡萄");
-
-        for (String 水果 : 水果列表) {
-            System.out.println("我喜欢吃" + 水果);
-        }
-
-        // 使用索引
-        for (int 索引 = 0; 索引 < 水果列表.size(); 索引++) {
-            System.out.println("第" + (索引 + 1) + "个水果是" + 水果列表.get(索引));
-        }
-    }
-
     // switch 语句示例
     public static void 匹配示例(int 值) {
         switch (值) {

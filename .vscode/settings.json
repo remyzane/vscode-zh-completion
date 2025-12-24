@@ -16,5 +16,6 @@
     "rust-analyzer.procMacro.enable": true,
     "rust-analyzer.linkedProjects": [
         "sample/Rust/Cargo.toml"
-    ]
+    ],
+    "dotnet.defaultSolution": "sample/C#/Simple.sln"
 }

@@ -15,13 +15,6 @@ class 学生元组 {
     }
 }
 
-function 中文函数() {
-    // 枚举示例
-    console.log(`喜欢的颜色: ${Object.keys(颜色枚举).find(key => 颜色枚举[key] === 颜色枚举.红色)}`);
-
-    const 学生 = new 学生元组('李四', 17, '高二一班');
-    console.log(`学生信息: ${学生.姓名}, ${学生.年龄}岁, ${学生.班级}`);
-}
 
 // for 循环示例
 function 遍历列表() {
@@ -114,10 +107,9 @@ function 生成平方数列表() {
     return 平方数列表;
 }
 
-module.exports = {
+export default {
     颜色枚举,
     学生元组,
-    中文函数,
     遍历列表,
     匹配示例,
     计算面积,

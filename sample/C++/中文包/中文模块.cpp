@@ -5,19 +5,6 @@ namespace 中文包
     // 全局枚举变量
     颜色枚举 喜欢的颜色 = 颜色枚举::红色;
 
-    void 中文函数(const std::string &参数1, const std::string &参数2)
-    {
-        // 枚举示例
-        std::cout << "喜欢的颜色: " << static_cast<int>(喜欢的颜色) << std::endl;
-
-        // 学生元组示例
-        学生元组 学生("李四", 17, "高二一班");
-        std::cout << "学生信息: " << 学生.姓名 << ", " << 学生.年龄 << "岁, " << 学生.班级 << std::endl;
-
-        std::cout << 参数1 << std::endl;
-        std::cout << 参数2 << std::endl;
-    }
-
     void 遍历列表()
     {
         std::vector<std::string> 水果列表 = {"苹果", "香蕉", "橙子", "葡萄"};

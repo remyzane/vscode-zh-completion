@@ -1,7 +1,3 @@
-"""
-Python 中文命名样例
-"""
-
 from enum import Enum
 from collections import namedtuple
 
@@ -36,25 +32,25 @@ def 遍历列表():
         print(f'第{索引 + 1}个水果是{水果}')
 
 
-# match 语句示例 (Python 3.10+)
-def 匹配示例(值):
-    match 值:
-        case 0:
-            print('零')
-        case 1 | 2 | 3:
-            print('小数字')
-        case _:
-            print('其他类型')
+# # match 语句示例 (Python 3.10+)
+# def 匹配示例(值):
+#     match 值:
+#         case 0:
+#             print('零')
+#         case 1 | 2 | 3:
+#             print('小数字')
+#         case _:
+#             print('其他类型')
 
 
-# 函数定义和调用示例
-def 计算面积(形状, **参数):
-    match 形状:
-        case '圆形':
-            半径 = 参数.get('半径', 1)
-            return 3.14159 * 半径**2
-        case _:
-            return 0
+# # 函数定义和调用示例
+# def 计算面积(形状, **参数):
+#     match 形状:
+#         case '圆形':
+#             半径 = 参数.get('半径', 1)
+#             return 3.14159 * 半径**2
+#         case _:
+#             return 0
 
 
 # 类的继承示例

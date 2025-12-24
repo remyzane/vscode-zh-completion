@@ -11,6 +11,12 @@ node_modules
 *.class
 # C
 sample/C/main
+# C++
+sample/C++/main
+sample/C++/Makefile
+sample/C++/CMakeFiles
+sample/C++/cmake_install.cmake
+sample/C++/CMakeCache.txt
 # C#
 sample/C#/bin
 sample/C#/obj
