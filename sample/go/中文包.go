@@ -68,16 +68,16 @@ func 计算面积(形状 string, 参数 map[string]float64) float64 {
 }
 
 // 接口和实现示例
-type 动物结构体 struct {
+type 动物 struct {
 	名称 string
 }
 
-type 狗结构体 struct {
-	动物结构体
+type 犬 struct {
+	动物
 }
 
-func (d 狗结构体) 发出声音() {
-	fmt.Printf("%s汪汪叫\n", d.名称)
+func (旺财 犬) 发出声音() {
+	fmt.Printf("%s：汪汪叫\n", 旺财.名称)
 }
 
 // 自定义错误
@@ -127,8 +127,9 @@ func main() {
 	生成平方数列表()
 	值, err := 除法运算(10, 1)
 	fmt.Printf("值: %f, 错误: %v\n", 值, err)
-	狗 := 狗结构体{}
-	狗.发出声音()
+	旺财 := 犬{}
+	旺财.名称 = "旺财"
+	旺财.发出声音()
 	计算面积("圆形", map[string]float64{"半径": 2})
 	匹配示例(2)
 }

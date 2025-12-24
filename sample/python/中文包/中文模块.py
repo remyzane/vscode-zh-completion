@@ -1,4 +1,6 @@
-"""中文命名样例"""
+"""
+Python 中文命名样例
+"""
 
 from enum import Enum
 from collections import namedtuple
@@ -67,7 +69,7 @@ class 动物类:
         print(f'{self.名称}发出了声音')
 
 
-class 狗类(动物类):
+class 犬类(动物类):
     def 发出声音(self):
         print(f'{self.名称}汪汪叫')
 
