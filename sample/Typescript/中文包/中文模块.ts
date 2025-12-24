@@ -1,40 +1,26 @@
-/**
- * Typescript 中文命名样例
- */
+// 枚举示例 (使用对象模拟枚举)
+const 颜色枚举 = {
+    红色: 1,
+    绿色: 2,
+    蓝色: 3
+} as const;
 
-// 枚举示例
-enum 颜色枚举 {
-    红色 = 1,
-    绿色 = 2,
-    蓝色 = 3
-}
-
-// 命名元组示例 (使用接口和类)
-interface 学生接口 {
+// 命名元组示例 (使用类模拟)
+class 学生元组 {
     姓名: string;
     年龄: number;
     班级: string;
-}
 
-class 学生元组 implements 学生接口 {
-    constructor(
-        public 姓名: string,
-        public 年龄: number,
-        public 班级: string
-    ) { }
-}
-
-function 中文函数(): void {
-    // 枚举示例
-    console.log(`喜欢的颜色: ${颜色枚举[颜色枚举.红色]}`);
-
-    const 学生 = new 学生元组('李四', 17, '高二一班');
-    console.log(`学生信息: ${学生.姓名}, ${学生.年龄}岁, ${学生.班级}`);
+    constructor(姓名: string, 年龄: number, 班级: string) {
+        this.姓名 = 姓名;
+        this.年龄 = 年龄;
+        this.班级 = 班级;
+    }
 }
 
 // for 循环示例
 function 遍历列表(): void {
-    const 水果列表: string[] = ['苹果', '香蕉', '橙子', '葡萄'];
+    const 水果列表 = ['苹果', '香蕉', '橙子', '葡萄'];
 
     for (const 水果 of 水果列表) {
         console.log(`我喜欢吃${水果}`);
@@ -63,10 +49,14 @@ function 匹配示例(值: number): void {
 }
 
 // 函数定义和调用示例
-function 计算面积(形状: string, 参数: { [key: string]: number } = {}): number {
+interface 计算面积参数 {
+    半径?: number;
+}
+
+function 计算面积(形状: string, 参数: 计算面积参数 = {}): number {
     switch (形状) {
         case '圆形':
-            const 半径: number = 参数.半径 || 1;
+            const 半径 = 参数.半径 || 1;
             return 3.14159 * 半径 ** 2;
         default:
             return 0;
@@ -76,8 +66,11 @@ function 计算面积(形状: string, 参数: { [key: string]: number } = {}): n
 // 类的继承示例
 class 动物类 {
     static 类型: string = '未知';
+    名称: string;
 
-    constructor(public 名称: string) { }
+    constructor(名称: string) {
+        this.名称 = 名称;
+    }
 
     发出声音(): void {
         console.log(`${this.名称}发出了声音`);
@@ -103,7 +96,7 @@ function 除法运算(被除数: number, 除数: number): number | null {
         if (除数 === 0) {
             throw new 除数不能为零异常();
         }
-        const 结果: number = 被除数 / 除数;
+        const 结果 = 被除数 / 除数;
         return 结果;
     } catch (error) {
         if (error instanceof 除数不能为零异常) {
@@ -116,15 +109,14 @@ function 除法运算(被除数: number, 除数: number): number | null {
 
 // 数组方法示例 (对应列表推导式)
 function 生成平方数列表(): number[] {
-    const 数字列表: number[] = [1, 2, 3, 4, 5];
-    const 平方数列表: number[] = 数字列表.filter((数字: number) => 数字 % 2 === 1).map((数字: number) => 数字 ** 2);
+    const 数字列表 = [1, 2, 3, 4, 5];
+    const 平方数列表 = 数字列表.filter(数字 => 数字 % 2 === 1).map(数字 => 数字 ** 2);
     return 平方数列表;
 }
 
-export {
+export default {
     颜色枚举,
     学生元组,
-    中文函数,
     遍历列表,
     匹配示例,
     计算面积,
@@ -133,4 +125,8 @@ export {
     除数不能为零异常,
     除法运算,
     生成平方数列表
+};
+
+export type {
+    计算面积参数
 };
