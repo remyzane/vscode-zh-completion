@@ -1,6 +1,5 @@
 import { 语言基类, 锚点配置T } from './基类';
 import 通用语言实现 from './通用实现';
-import go from './实现/go';
 import html from './实现/html';
 import java from './实现/java';
 import javascript from './实现/javascript';
@@ -14,7 +13,6 @@ export type { 锚点配置T };
 export { 语言基类, 通用语言实现 };
 
 export const 语言配置表: { [语言: string]: 语言基类 } = {
-    go,
     html,
     java,
     javascript,
