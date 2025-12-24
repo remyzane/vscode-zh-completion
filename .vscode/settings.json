@@ -12,5 +12,9 @@
     "typescript.tsc.autoDetect": "off",
     "[typescript]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
-    }
+    },
+    "rust-analyzer.procMacro.enable": true,
+    "rust-analyzer.linkedProjects": [
+        "sample/Rust/Cargo.toml"
+    ]
 }

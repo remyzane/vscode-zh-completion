@@ -7,53 +7,6 @@ import java.util.List;
  * Java 中文命名样例
  */
 
-// 学生类示例
-class 学生元组 {
-    private final String 姓名;
-    private final int 年龄;
-    private final String 班级;
-
-    public 学生元组(String 姓名, int 年龄, String 班级) {
-        this.姓名 = 姓名;
-        this.年龄 = 年龄;
-        this.班级 = 班级;
-    }
-
-    public String get姓名() {
-        return 姓名;
-    }
-
-    public int get年龄() {
-        return 年龄;
-    }
-
-    public String get班级() {
-        return 班级;
-    }
-
-    @Override
-    public String toString() {
-        return 姓名 + ", " + 年龄 + "岁, " + 班级;
-    }
-}
-
-// 枚举示例
-enum 颜色枚举 {
-    红色(1),
-    绿色(2),
-    蓝色(3);
-
-    private final int 值;
-
-    颜色枚举(int 值) {
-        this.值 = 值;
-    }
-
-    public int get值() {
-        return 值;
-    }
-}
-
 public class 中文模块 {
 
     public static void 中文函数(String 参数1, String 参数2) {
