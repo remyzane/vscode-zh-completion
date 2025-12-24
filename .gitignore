@@ -11,6 +11,7 @@ node_modules
 *.class
 # C
 sample/C/main
+sample/C/**/*.o
 # C++
 sample/C++/main
 sample/C++/Makefile

@@ -14,12 +14,6 @@ make
 make run
 ```
 
-或者：
-
-```bash
-./main
-```
-
 ### 清理
 
 ```bash
