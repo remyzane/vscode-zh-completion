@@ -5,14 +5,6 @@ Python 中文命名样例
 from enum import Enum
 from collections import namedtuple
 
-
-# 枚举示例
-class 颜色枚举(Enum):
-    红色 = 1
-    绿色 = 2
-    蓝色 = 3
-
-
 # 命名元组示例
 学生元组 = namedtuple('学生元组', ['姓名', '年龄', '班级'])
 
@@ -23,6 +15,13 @@ def 中文函数():
 
     学生 = 学生元组('李四', 17, '高二一班')
     print(f'学生信息: {学生.姓名}, {学生.年龄}岁, {学生.班级}')
+
+
+# 枚举示例
+class 颜色枚举(Enum):
+    红色 = 1
+    绿色 = 2
+    蓝色 = 3
 
 
 # for 循环示例

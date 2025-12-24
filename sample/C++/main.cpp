@@ -1,0 +1,8 @@
+#include "中文包/中文模块.h"
+#include <iostream>
+
+int main()
+{
+    中文包::中文函数("xxx", "yyy");
+    return 0;
+}

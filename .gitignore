@@ -1,7 +1,15 @@
 .var
+tmp
 out
 dist
 node_modules
 .vscode-test/
 *.vsix
 .DS_Store
+
+# Java
+*.class
+# C
+sample/C/main
+# Rust
+sample/Rust/target
