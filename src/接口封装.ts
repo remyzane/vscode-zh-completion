@@ -2,7 +2,9 @@
 import * as vsc from 'vscode';
 import { 语言基类, 语言配置表, 通用语言实现, 锚点配置T } from './语言';
 
-export * from 'vscode';
+export { window, workspace, languages, commands, TextDocument } from 'vscode';
+export { Position, ExtensionContext, CancellationToken } from 'vscode';
+export { CompletionContext, CompletionItem, CompletionList, CompletionItemLabel, CompletionItemKind } from 'vscode';
 
 const outputChannel = vsc.window.createOutputChannel('中文代码补全');
 

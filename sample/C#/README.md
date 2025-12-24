@@ -2,10 +2,18 @@
 
 ## 编译和运行
 
+### 前置要求
+
+- .NET 10.0 或更高版本
+
 ### 编译
 
 ```bash
-
+dotnet build
 ```
 
 ### 运行
+
+```bash
+dotnet run
+```

@@ -11,5 +11,8 @@ node_modules
 *.class
 # C
 sample/C/main
+# C#
+sample/C#/bin
+sample/C#/obj
 # Rust
 sample/Rust/target

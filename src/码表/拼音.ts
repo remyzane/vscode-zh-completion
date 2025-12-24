@@ -74,7 +74,7 @@ export class 编码器 extends 补全码编码器 {
         }
     };
 
-    生成补全码(补全项: vsc.CompletionItem, 补全项文本: string) {
+    设置补全码(补全项: vsc.CompletionItem, 补全项文本: string) {
         const 补全码组: string[] = [];
         // 先切分连续的汉字块
         const { 切分块, 首块是否非汉字 } = 切分文本(补全项文本);

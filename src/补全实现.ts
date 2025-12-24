@@ -8,7 +8,11 @@ export function 注册已知语言补全器(context: vsc.ExtensionContext, 语�
     context.subscriptions.push(
         vsc.languages.registerCompletionItemProvider(
             { language: 语言 },
-            { provideCompletionItems: 补全实现, resolveCompletionItem: () => null },
+            {
+                provideCompletionItems: 补全实现,
+                // resolveCompletionItem: () => null
+                // resolveCompletionItem: (补全项: vsc.CompletionItem) => env.编码器.设置补全码和排序权重(补全项)
+            },
             ...触发字符
         )
     );
@@ -19,7 +23,10 @@ export function 注册未知语言补全器(context: vsc.ExtensionContext) {
     context.subscriptions.push(
         vsc.languages.registerCompletionItemProvider(
             { language: '*' },
-            { provideCompletionItems: 未知语言补全实现, resolveCompletionItem: () => null },
+            {
+                provideCompletionItems: 未知语言补全实现,
+                resolveCompletionItem: (补全项: vsc.CompletionItem) => env.编码器.设置补全码和排序权重(补全项)
+            },
             ...通用语言实现.触发字符
         )
     );
@@ -40,10 +47,18 @@ export async function 补全实现(
     // 获得系统补全
     env.获得系统补全中 = true;
     try {
-        var 系统补全器 = await 语言.获得系统补全(文档, 位置, 锚点);
+        // var 系统补全器 = await 语言.获得系统补全(文档, 位置, 锚点);
+
+        var originalCompletions = await vsc.commands.executeCommand<vsc.CompletionList>(
+            'vscode.executeCompletionItemProvider',
+            文档.uri,
+            位置
+        );
     } finally {
         env.获得系统补全中 = false; // 即使 await 抛错，也会执行
     }
+
+    return originalCompletions;
 
     // 去重
     let 系统补全列表: vsc.CompletionItem[] = uniqWith((a, b) => a.label === b.label, 系统补全器.items);
@@ -53,11 +68,12 @@ export async function 补全实现(
 
     // for (const 补全项 of 系统补全列表) { vsc.log(`系统补全项：${JSON.stringify(补全项)}`); }
 
-    const 补全列表 = 语言.生成中文补全(env.编码器, 系统补全列表, 输入值);
+    // const 补全列表 = 语言.生成中文补全(env.编码器, 系统补全列表, 输入值);
+    const 补全列表 = 系统补全列表;
 
     // for (const 补全项 of 补全列表) { vsc.log(`补全项：${JSON.stringify(补全项)}`); }
 
-    return new vsc.CompletionList(补全列表, true);
+    return new vsc.CompletionList(补全列表, false);
 }
 
 export async function 未知语言补全实现(
