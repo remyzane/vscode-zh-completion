@@ -5,8 +5,8 @@ export abstract class 语言基类 {
     public 触发字符!: string[];
     public 补全锚点配置?: 锚点配置T;
 
-    public 需要矫正锚点(文档: vsc.TextDocument): boolean {
-        return true;
+    public 不需要矫正锚点(文档: vsc.TextDocument): boolean {
+        return !this.补全锚点配置;
     }
 
     async 获得系统补全(

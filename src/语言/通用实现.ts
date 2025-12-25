@@ -1,7 +1,7 @@
 import * as vsc from '../接口封装';
 import { 语言基类 } from './基类';
 
-const 不需要矫正锚点: string[] = [];
+const 不需要矫正锚点的语言: string[] = [];
 
 /**
  * 通用默认语言配置
@@ -9,12 +9,8 @@ const 不需要矫正锚点: string[] = [];
  */
 export class 通用语言实现 extends 语言基类 {
 
-    public 需要矫正锚点(文档: vsc.TextDocument): boolean {
-        if (不需要矫正锚点.includes(文档.languageId)) {
-            return false;
-        } else {
-            return true;
-        }
+    public 不需要矫正锚点(文档: vsc.TextDocument): boolean {
+        return 不需要矫正锚点的语言.includes(文档.languageId);
     }
 
     constructor() {
