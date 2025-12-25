@@ -58,6 +58,7 @@ class 动物类:
 
 class 犬类(动物类):
     def 发出声音(self):
+        super().发出声音()
         print(f'{self.名称}汪汪叫')
 
 

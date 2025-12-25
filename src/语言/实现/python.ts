@@ -3,8 +3,43 @@ import { 语言基类 } from '../基类';
 
 
 export class 语言实现 extends 语言基类 {
+    private 补全缓存类型?: 'from' | 'super';
     private 补全缓存KEY?: string;
     private 补全缓存内容?: vsc.CompletionList<vsc.CompletionItem>;
+
+    需要缓存(行文本: string, 光标位置: number): boolean {
+        // 输入 from . 或 from .. 或 from ..xx. 时，可以获得补全项（先缓存起来）
+        if (行文本.startsWith('from ') && 行文本[光标位置 - 1] === '.') {
+            this.补全缓存类型 = 'from';
+            return true;
+        }
+        // 输入 super(). 时，可以获得补全项（先缓存起来）
+        if (行文本.endsWith('super().')) {
+            this.补全缓存类型 = 'super';
+            return true;
+        }
+        return false;
+    }
+
+    无需使用缓存(行文本: string, 光标位置: number): boolean {
+        // 输入 from .xx import 时，可以正常获取系统补全了，无需使用缓存
+        if (this.补全缓存类型 === 'from' && 行文本.substring(0, 光标位置).includes(' import ')) {
+            return true;
+        }
+        // 输入 super().xxx )、super().xxx(yyy 或 super().xxx.yyy 等时，可以正常获取系统补全了，无需使用缓存
+        if (this.补全缓存类型 === 'super') {
+            const 前后文本 = 行文本.split('super().');
+
+            if (前后文本.length > 1) {
+                const 后文本 = 前后文本[1];
+                if (后文本.includes(' ') || 后文本.includes(')') || 后文本.includes('(') || 后文本.includes('.') || 后文本.includes(',')) {
+                    return true;
+                }
+            }
+        }
+        // vsc.log(`使用缓存: ${行文本}`)
+        return false;
+    }
 
     async 获得系统补全(
         文档: vsc.TextDocument, 光标位置: vsc.Position, 补全锚点: vsc.Position
@@ -12,17 +47,16 @@ export class 语言实现 extends 语言基类 {
         const 系统补全 = await super.获得系统补全(文档, 光标位置, 补全锚点);
         // 获取当前行的文本
         const 行文本 = 文档.lineAt(光标位置.line).text;
-        // 输入 from . 或 from .. 或 from ..xx. 时，可以获得补全项（先缓存起来）
-        if (行文本.startsWith('from ') && 行文本[光标位置.character - 1] === '.') {
+        //
+        if (this.需要缓存(行文本, 光标位置.character)) {
             this.补全缓存KEY = 行文本.substring(0, 光标位置.character);
             this.补全缓存内容 = 系统补全;
-            return { items: [] };   // 为了避免重复输出（from . 时，就算我们提供了，系统补全项还是会自己输出）
+            return { items: [] };   // 为了避免重复输出（from . 或 super(). 时，展现系统补全项就可以了（还没开始过滤））
         } else {
             if (this.补全缓存KEY) {
                 // 输入 from .xx 时，使用 from . 时缓存的补全项
                 if (行文本.startsWith(this.补全缓存KEY)) {
-                    // 输入 from .xx import 时，可以正常获取系统补全了，无需使用缓存
-                    if (!行文本.substring(0, 光标位置.character).includes(' import ')) {
+                    if (!this.无需使用缓存(行文本, 光标位置.character)) {
                         return this.补全缓存内容 as vsc.CompletionList<vsc.CompletionItem>;
                     }
                 } else { // 已经切换到其他行（非导入行），则清除缓存

@@ -18,6 +18,7 @@ export function 获得输入值(): string {
         return '';
     }
     const 光标位置 = 编辑器.selections[0].anchor;
+    // log(`获得输入值基准点：line: ${光标位置.line}，character: ${光标位置.character}`)
     const 文件 = 编辑器.document;
     const 范围 = 文件.getWordRangeAtPosition(光标位置);
     if (范围 === null) {
