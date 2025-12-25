@@ -5,14 +5,6 @@ from collections import namedtuple
 学生元组 = namedtuple('学生元组', ['姓名', '年龄', '班级'])
 
 
-def 中文函数():
-    # 枚举示例
-    print(f'喜欢的颜色: {颜色枚举.红色.name}')
-
-    学生 = 学生元组('李四', 17, '高二一班')
-    print(f'学生信息: {学生.姓名}, {学生.年龄}岁, {学生.班级}')
-
-
 # 枚举示例
 class 颜色枚举(Enum):
     红色 = 1

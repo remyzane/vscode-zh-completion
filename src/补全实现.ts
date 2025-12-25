@@ -8,11 +8,7 @@ export function 注册已知语言补全器(context: vsc.ExtensionContext, 语�
     context.subscriptions.push(
         vsc.languages.registerCompletionItemProvider(
             { language: 语言 },
-            {
-                provideCompletionItems: 补全实现,
-                resolveCompletionItem: () => null
-                // resolveCompletionItem: (补全项: vsc.CompletionItem) => env.编码器.设置补全码和排序权重(补全项)
-            },
+            { provideCompletionItems: 补全实现, resolveCompletionItem: () => null },
             ...触发字符
         )
     );
@@ -23,12 +19,7 @@ export function 注册未知语言补全器(context: vsc.ExtensionContext) {
     context.subscriptions.push(
         vsc.languages.registerCompletionItemProvider(
             { language: '*' },
-            {
-                provideCompletionItems: 未知语言补全实现,
-                resolveCompletionItem: () => null
-                // resolveCompletionItem: (补全项: vsc.CompletionItem) => env.编码器.设置补全码和排序权重(补全项)
-            },
-
+            { provideCompletionItems: 未知语言补全实现, resolveCompletionItem: () => null },
             ...通用语言实现.触发字符
         )
     );
@@ -42,7 +33,7 @@ export async function 补全实现(
     if (env.获得系统补全中) { return []; }  // 避免无限循环（调用'获得系统补全'时会调用'提供补全'函数, 这会导致无限循环）
 
     const 语言 = 语言配置表[文档.languageId] || 通用语言实现;
-    const 锚点 = 语言.不需要矫正锚点(文档) ? vsc.矫正补全锚点(文档, 位置) : 位置;
+    const 锚点 = 语言.不需要矫正锚点(文档) ? 位置 : vsc.矫正补全锚点(文档, 位置);
 
     vsc.log(`补全「${输入值}」${文档.fileName}, ${文档.languageId}, ${锚点.line}:${锚点.character}`);
 
