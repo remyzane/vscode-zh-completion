@@ -1,13 +1,11 @@
+
 package 中文示例;
 
 import 中文包.颜色枚举;
 import 中文包.学生元组;
 import 中文包.中文模块;
 
-/**
- * Java 中文命名样例
- */
-public class 样例 {
+public class Java样例 {
 
     public static void 中文函数(String 参数1, String... 参数N) {
 
@@ -23,6 +21,6 @@ public class 样例 {
 
     public static void main(String[] args) {
         中文模块.匹配示例(123);
-        样例.中文函数("", "Java 中文命名样例测试");
+        Java样例.中文函数("", "Java 中文命名样例");
     }
 }

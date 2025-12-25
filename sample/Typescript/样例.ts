@@ -1,11 +1,9 @@
+
 import 中文模块 from './中文包/中文模块.js';
+
 const { 颜色枚举, 学生元组 } = 中文模块;
 
-/**
- * TypeScript 中文命名样例
- */
-
-function 中文函数({ 参数 }: { 参数: string }): void {
+function TypeScript样例({ 参数 }: { 参数: string }): void {
 
     console.log(`喜欢的色号: ${颜色枚举.红色}`);
 
@@ -15,4 +13,4 @@ function 中文函数({ 参数 }: { 参数: string }): void {
     console.log(参数);
 }
 
-中文函数({ 参数: 'TypeScript 中文命名样例测试' });
+TypeScript样例({ 参数: 'TypeScript 中文命名样例' });

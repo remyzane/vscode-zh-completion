@@ -1,12 +1,12 @@
-using 中文包;
 
-/** C# 中文命名样例 */
+using 中文包;
 
 namespace Simple
 {
     class Program
     {
-        public static void 中文函数(string 参数)
+        /** C# 中文命名样例 */
+        public static void 样例(string 参数)
         {
             Console.WriteLine($"喜欢的颜色: {颜色枚举.红色}");
 
@@ -17,7 +17,7 @@ namespace Simple
         }
         static void Main(string[] args)
         {
-            Program.中文函数(参数: "中文命名样例测试");
+            Program.样例(参数: "中文命名样例");
         }
     }
 }
