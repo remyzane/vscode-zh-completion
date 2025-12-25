@@ -21,9 +21,9 @@ export abstract class 补全码编码器 {
         const 补全项文本 = (
             (补全项.label as vsc.CompletionItemLabel).label ? (补全项.label as vsc.CompletionItemLabel).label : 补全项.label
         ) as string; // 调用方保证有仅有这两种情况，最后一定能得到string
-        console.log('---------')
+        console.log('---------');
         this.设置补全码(补全项, 补全项文本);
-        console.log('=========')
+        console.log('=========');
         // // 中文项前排显示（要求首字符为中文）
         // if (/^[\u4e00-\u9fa5]/.test(补全项文本)) {
         //     补全项.sortText = `08.8888.${补全项文本}`;

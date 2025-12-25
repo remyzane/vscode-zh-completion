@@ -8,7 +8,7 @@ export function activate(context: vsc.ExtensionContext) {
 
 		env.加载配置().then();
 		vsc.workspace.onDidChangeConfiguration(async () => {
-			env.加载配置().then();	// 当配置修改时刷新配置
+			env.加载配置().then();  // 当配置修改时刷新配置
 		});
 
 		env.注册语言(context);

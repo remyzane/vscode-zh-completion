@@ -10,7 +10,7 @@ export function 注册已知语言补全器(context: vsc.ExtensionContext, 语�
             { language: 语言 },
             {
                 provideCompletionItems: 补全实现,
-                // resolveCompletionItem: () => null
+                resolveCompletionItem: () => null
                 // resolveCompletionItem: (补全项: vsc.CompletionItem) => env.编码器.设置补全码和排序权重(补全项)
             },
             ...触发字符
@@ -25,8 +25,10 @@ export function 注册未知语言补全器(context: vsc.ExtensionContext) {
             { language: '*' },
             {
                 provideCompletionItems: 未知语言补全实现,
-                resolveCompletionItem: (补全项: vsc.CompletionItem) => env.编码器.设置补全码和排序权重(补全项)
+                resolveCompletionItem: () => null
+                // resolveCompletionItem: (补全项: vsc.CompletionItem) => env.编码器.设置补全码和排序权重(补全项)
             },
+
             ...通用语言实现.触发字符
         )
     );
@@ -40,25 +42,17 @@ export async function 补全实现(
     if (env.获得系统补全中) { return []; }  // 避免无限循环（调用'获得系统补全'时会调用'提供补全'函数, 这会导致无限循环）
 
     const 语言 = 语言配置表[文档.languageId] || 通用语言实现;
-    const 锚点 = 语言.不需要矫正锚点(文档) ? 位置 : vsc.矫正补全锚点(文档, 位置);
+    const 锚点 = 语言.不需要矫正锚点(文档) ? vsc.矫正补全锚点(文档, 位置) : 位置;
 
     vsc.log(`补全「${输入值}」${文档.fileName}, ${文档.languageId}, ${锚点.line}:${锚点.character}`);
 
     // 获得系统补全
     env.获得系统补全中 = true;
     try {
-        // var 系统补全器 = await 语言.获得系统补全(文档, 位置, 锚点);
-
-        var originalCompletions = await vsc.commands.executeCommand<vsc.CompletionList>(
-            'vscode.executeCompletionItemProvider',
-            文档.uri,
-            位置
-        );
+        var 系统补全器 = await 语言.获得系统补全(文档, 位置, 锚点);
     } finally {
         env.获得系统补全中 = false; // 即使 await 抛错，也会执行
     }
-
-    return originalCompletions;
 
     // 去重
     let 系统补全列表: vsc.CompletionItem[] = uniqWith((a, b) => a.label === b.label, 系统补全器.items);
@@ -68,12 +62,11 @@ export async function 补全实现(
 
     // for (const 补全项 of 系统补全列表) { vsc.log(`系统补全项：${JSON.stringify(补全项)}`); }
 
-    // const 补全列表 = 语言.生成中文补全(env.编码器, 系统补全列表, 输入值);
-    const 补全列表 = 系统补全列表;
+    const 补全列表 = 语言.生成中文补全(env.编码器, 系统补全列表, 输入值);
 
     // for (const 补全项 of 补全列表) { vsc.log(`补全项：${JSON.stringify(补全项)}`); }
 
-    return new vsc.CompletionList(补全列表, false);
+    return new vsc.CompletionList(补全列表, true);
 }
 
 export async function 未知语言补全实现(
