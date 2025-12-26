@@ -4,6 +4,38 @@
 
 [![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/chinese.vscode-zh-completion?logo=visual-studio-code&label=VS%20Code%20插件)](https://marketplace.visualstudio.com/items?itemName=chinese.vscode-zh-completion)
 
+## 简介
+
+**中文命名的高效补全** —— 变量、函数、类名无需切换输入法即可直接输入，命名与注释仍使用你习惯的输入法。
+
+支持拼音、五笔等多种输入习惯，**只需一次选择，插件即自动加载对应码表并配置好补全逻辑**。
+
+### 效果图
+
+[Python](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/python.png)
+[代码样例](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/python.png)
+
+![](images/python.png)
+
+### 支持的语言
+
+测试各语言所需的语言服务器插件
+
+|     语言    |                                       |
+| ---------- | ------------------------------------- |
+| [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance) | [样例代码](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Python) |
+| [SQL](https://marketplace.visualstudio.com/items?itemName=cweijan.vscode-database-client2) | [样例代码](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/SQL) |
+| [JavaScript](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-next) | [样例代码](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/JavaScript) |
+| [TypeScript](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-next) | [样例代码](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/TypeScript) |
+| [Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) | [样例代码](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Java) |
+| [XML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-xml) | [样例代码](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/XML) |
+| [C](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack) | [样例代码](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/C) |
+| [C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack) | [样例代码](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/C++) |
+| [C#](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp) | [样例代码](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/C#) |
+| [Rust](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer) | [样例代码](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Rust) |
+<!-- | [Xxx](https://marketplace.visualstudio.com/items?itemName=Xxx) | [样例代码](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Xxx) | -->
+
+
 ## 配置
 
 ### 输入习惯
@@ -22,9 +54,6 @@
 
 ### ✅ 无须改变输入习惯
 
-**中文命名的高效补全** —— 变量、函数、类名无需切换输入法即可直接输入，命名与注释仍使用你习惯的输入法。
-
-支持拼音、五笔等多种输入习惯，**只需一次选择，插件即自动加载对应码表并配置好补全逻辑**。
 
 ### ⚡ 极致轻量高效
 
@@ -40,9 +69,6 @@
 
 无缝适配 Python、JavaScript、Java、C++ 等主流编程语言
 
-[效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/python.png)
-
-![](images/python.png)
 
 ## 推荐
 
