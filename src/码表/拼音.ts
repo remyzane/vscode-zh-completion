@@ -74,10 +74,10 @@ export class 编码器 extends 补全码编码器 {
         }
     };
 
-    设置补全码(补全项: vsc.CompletionItem, 补全项文本: string) {
+    生成补全码(中文内容: string): string {
         const 补全码组: string[] = [];
         // 先切分连续的汉字块
-        const { 切分块, 首块是否非汉字 } = 切分文本(补全项文本);
+        const { 切分块, 首块是否非汉字 } = 切分文本(中文内容);
         // 处理所有切分块
         for (let i = 0; i < 切分块.length; i++) {
             if (i % 2 === 首块是否非汉字) {
@@ -89,7 +89,7 @@ export class 编码器 extends 补全码编码器 {
                     let 短语 = '';
                     // 优先匹配4字符短语
                     if (j + 4 <= 块end) {
-                        const key = 补全项文本.slice(j, j + 4);
+                        const key = 中文内容.slice(j, j + 4);
                         if (Object.hasOwn(拼音多音字词表, key)) {
                             是否匹配 = true;
                             匹配长度 = 4;
@@ -98,7 +98,7 @@ export class 编码器 extends 补全码编码器 {
                     }
                     // 未匹配则尝试3字符
                     if (!是否匹配 && j + 3 <= 块end) {
-                        const key = 补全项文本.slice(j, j + 3);
+                        const key = 中文内容.slice(j, j + 3);
                         if (Object.hasOwn(拼音多音字词表, key)) {
                             是否匹配 = true;
                             匹配长度 = 3;
@@ -107,7 +107,7 @@ export class 编码器 extends 补全码编码器 {
                     }
                     // 未匹配则尝试2字符
                     if (!是否匹配 && j + 2 <= 块end) {
-                        const key = 补全项文本.slice(j, j + 2);
+                        const key = 中文内容.slice(j, j + 2);
                         if (Object.hasOwn(拼音多音字词表, key)) {
                             是否匹配 = true;
                             匹配长度 = 2;
@@ -121,7 +121,7 @@ export class 编码器 extends 补全码编码器 {
                             const valChar = value.charAt(k);
                             if (valChar === ' ') {
                                 // 空格表示需要查码表
-                                补全码组.push(this.现行码表.charAt(补全项文本.charCodeAt(j + k) - 19968));
+                                补全码组.push(this.现行码表.charAt(中文内容.charCodeAt(j + k) - 19968));
                             } else {
                                 if (this.输入习惯 === '声笔简拼' || this.输入习惯 === '声笔简码') {
                                     if ('aeiou'.indexOf(valChar) > -1) {
@@ -137,7 +137,7 @@ export class 编码器 extends 补全码编码器 {
                         j += 匹配长度 - 1; // 跳过整个短语；因为for循环还有j++，这里要减1
                     } else {
                         // 无匹配短语，单字符查码表
-                        补全码组.push(this.现行码表.charAt(补全项文本.charCodeAt(j) - 19968));
+                        补全码组.push(this.现行码表.charAt(中文内容.charCodeAt(j) - 19968));
                     }
                 }
                 if (this.输入习惯 === '声笔简码' && (块end - 块start) > 4) {
@@ -146,11 +146,11 @@ export class 编码器 extends 补全码编码器 {
                 }
             } else {
                 // 非汉字块
-                补全码组.push(补全项文本.slice(切分块[i][0], 切分块[i][1]));
+                补全码组.push(中文内容.slice(切分块[i][0], 切分块[i][1]));
             }
         }
-        补全项.filterText = 补全码组.join("");
-        // 补全项.insertText = 补全项文本;
+        return 补全码组.join("");
+        // return 中文内容;
     }
 }
 

@@ -25,9 +25,24 @@ export abstract class 语言基类 {
             (补全项) => this.过滤补全项(补全项, 输入值)
         );
         for (var 补全项 of 补全列表) {
-            编码器.设置补全码和排序权重(补全项);
+            const 文本标签 = (
+                (补全项.label as vsc.CompletionItemLabel).label ? (补全项.label as vsc.CompletionItemLabel).label : 补全项.label
+            ) as string; // 调用方保证有仅有这两种情况，最后一定能得到string
+            this.设置补全码(补全项, 文本标签, 编码器);
+            this.设置排序权重(补全项, 文本标签);
         }
         return 补全列表;
+    }
+
+    设置补全码(补全项: vsc.CompletionItem, 文本标签: string, 编码器: 补全码编码器) {
+        补全项.filterText = 编码器.生成补全码(文本标签);
+    }
+
+    设置排序权重(补全项: vsc.CompletionItem, 文本标签: string) {
+        // 中文项前排显示（要求首字符为中文）
+        if (/^[\u4e00-\u9fa5]/.test(文本标签)) {
+            补全项.sortText = `08.8888.${文本标签}`;
+        }
     }
 
     protected 过滤补全项(补全项: vsc.CompletionItem, 输入值: string): boolean {

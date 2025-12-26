@@ -14,19 +14,9 @@ export abstract class 补全码编码器 {
         this.输入习惯 = 输入习惯;
     };
 
-    /** 更改 补全项.filterText（如：拼音 '中国 ❤ china' → 'zg ❤ china'）*/
-    abstract 设置补全码(补全项: vsc.CompletionItem, 补全项文本: string): void;
+    /** 如：拼音 '中国 ❤ china' → 'zg ❤ china' */
+    abstract 生成补全码(中文内容: string): string;
 
-    设置补全码和排序权重(补全项: vsc.CompletionItem) {
-        const 补全项文本 = (
-            (补全项.label as vsc.CompletionItemLabel).label ? (补全项.label as vsc.CompletionItemLabel).label : 补全项.label
-        ) as string; // 调用方保证有仅有这两种情况，最后一定能得到string
-        this.设置补全码(补全项, 补全项文本);
-        // 中文项前排显示（要求首字符为中文）
-        if (/^[\u4e00-\u9fa5]/.test(补全项文本)) {
-            补全项.sortText = `08.8888.${补全项文本}`;
-        }
-    }
 }
 
 export async function 载入编码器(输入习惯: string): Promise<补全码编码器> {
