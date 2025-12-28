@@ -3,7 +3,7 @@ import 中文模块 from './中文包/中文模块.js';
 
 const { 颜色枚举, 学生元组 } = 中文模块;
 
-function Javascript样例({ 参数 }) {
+function JavaScript样例({ 参数 }) {
 
     console.log(`喜欢的色号: ${颜色枚举.红色}`);
 
@@ -13,4 +13,4 @@ function Javascript样例({ 参数 }) {
     console.log(参数);
 }
 
-Javascript样例({ 参数: 'Javascript 中文命名样例' });
+JavaScript样例({ 参数: 'JavaScript 中文命名示例' });

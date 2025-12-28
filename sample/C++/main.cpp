@@ -2,7 +2,7 @@
 #include "中文包/中文模块.h"
 #include <iostream>
 
-/** C++ 中文命名样例 */
+/** C++ 中文命名示例 */
 void 样例(const std::string &参数)
 {
     std::cout << "喜欢的颜色: " << static_cast<int>(中文包::颜色枚举::红色) << std::endl;
@@ -15,6 +15,6 @@ void 样例(const std::string &参数)
 
 int main()
 {
-    样例("C++ 中文命名样例");
+    样例("C++ 中文命名示例");
     return 0;
 }

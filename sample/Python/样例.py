@@ -10,4 +10,4 @@ def Python样例(参数1: str, **参数N):
 
     print(参数1, 参数N.get('参数2'))
 
-Python样例(参数1='Python', 参数2='中文命名样例')
+Python样例(参数1='Python', 参数2='中文命名示例')

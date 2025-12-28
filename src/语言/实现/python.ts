@@ -44,13 +44,11 @@ export class 语言实现 extends 语言基类 {
     async 获得系统补全(
         文档: vsc.TextDocument, 光标位置: vsc.Position, 补全锚点: vsc.Position
     ): Promise<vsc.CompletionList<vsc.CompletionItem>> {
-        const 系统补全 = await super.获得系统补全(文档, 光标位置, 补全锚点);
         // 获取当前行的文本
         const 行文本 = 文档.lineAt(光标位置.line).text;
-        //
         if (this.需要缓存(行文本, 光标位置.character)) {
             this.补全缓存KEY = 行文本.substring(0, 光标位置.character);
-            this.补全缓存内容 = 系统补全;
+            this.补全缓存内容 = await super.获得系统补全(文档, 光标位置, 补全锚点);
             return { items: [] };   // 为了避免重复输出（from . 或 super(). 时，展现系统补全项就可以了（还没开始过滤））
         } else {
             if (this.补全缓存KEY) {
@@ -66,7 +64,7 @@ export class 语言实现 extends 语言基类 {
 
             }
         }
-        return 系统补全;
+        return await super.获得系统补全(文档, 光标位置, 补全锚点);
     }
 
     constructor() {
@@ -81,10 +79,6 @@ export class 语言实现 extends 语言基类 {
             '=',    // 关键字参数赋值（如 func(timeout=)）
             ' ',    // 类静态成员或Model字段定义
         ];
-        // this.补全锚点配置 = {
-        //     // 是否标识符字符: (字符) => /[a-zA-Z0-9_]/.test(字符),
-        //     补全锚点最大矫正距离: 30
-        // };
     }
 }
 

@@ -21,6 +21,6 @@ public class Java样例 {
 
     public static void main(String[] args) {
         中文模块.匹配示例(123);
-        Java样例.中文函数("", "Java 中文命名样例");
+        Java样例.中文函数("", "Java 中文命名示例");
     }
 }

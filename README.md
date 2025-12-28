@@ -10,10 +10,10 @@
 
 支持拼音、五笔等多种输入习惯，**只需一次选择，插件即自动加载对应码表并配置好补全逻辑**。
 
-### 效果图
+## 支持的语言
 
 **Python**
-[语言插件](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylanc)
+[语言插件](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
 [完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Python)
 [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/Python.png)
 ![](images/Python.png)
@@ -42,21 +42,67 @@
 [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/JSON.png)
 ![](images/JSON.png)
 
-### 支持的语言
+**Java**
+[语言插件](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
+[完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Java)
+[效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/Java.png)
+![](images/Java.png)
 
-测试各语言所需的语言服务器插件
+**XML**
+[语言插件](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-xml)
+[完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/XML)
+[效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/XML.png)
+![](images/XML.png)
+
+**C 语言**
+[语言插件](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack)
+[完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/C)
+[效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/C.png)
+![](images/C.png)
+
+**C++**
+[语言插件](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack)
+[完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/C++)
+[效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/C++.png)
+![](images/C++.png)
+
+**C#**
+[语言插件](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)
+[完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/C#)
+[效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/C#.png)
+![](images/C#.png)
+
+**Rust**
+[语言插件](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+[完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Rust)
+[效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/Rust.png)
+![](images/Rust.png)
+
+**YAML**
+[语言插件](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
+[完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/YAML)
+[效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/YAML.png)
+![](images/YAML.png)
 
 <!--
- | []() | [样例代码](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/) |
-| [TypeScript](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-next) | [样例代码](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/TypeScript) |
-| [Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) | [样例代码](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Java) |
-| [XML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-xml) | [样例代码](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/XML) |
-| [C](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack) | [样例代码](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/C) |
-| [C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack) | [样例代码](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/C++) |
-| [C#](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp) | [样例代码](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/C#) |
-| [Rust](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer) | [样例代码](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Rust) |
-| [Xxx](https://marketplace.visualstudio.com/items?itemName=Xxx) | [样例代码](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Xxx) | -->
+**XxxxXxxxXxxx**
+[语言插件](https://marketplace.visualstudio.com/items?itemName=XXXXXX)
+[完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/XXXXXX)
+[效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/XXXXXX.png)
+![](images/XXXXXX.png)
 
+**XxxxXxxxXxxx**
+[语言插件](https://marketplace.visualstudio.com/items?itemName=XXXXXX)
+[完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/XXXXXX)
+[效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/XXXXXX.png)
+![](images/XXXXXX.png)
+
+**XxxxXxxxXxxx**
+[语言插件](https://marketplace.visualstudio.com/items?itemName=XXXXXX)
+[完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/XXXXXX)
+[效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/XXXXXX.png)
+![](images/XXXXXX.png)
+-->
 
 ## 配置
 

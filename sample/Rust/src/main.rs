@@ -15,5 +15,5 @@ pub fn Rust样例(参数: &str) {
 }
 
 fn main() {
-    Rust样例("Rust 中文命名样例");
+    Rust样例("Rust 中文命名示例");
 }

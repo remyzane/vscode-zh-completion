@@ -13,4 +13,4 @@ function TypeScript样例({ 参数 }: { 参数: string }): void {
     console.log(参数);
 }
 
-TypeScript样例({ 参数: 'TypeScript 中文命名样例' });
+TypeScript样例({ 参数: 'TypeScript 中文命名示例' });

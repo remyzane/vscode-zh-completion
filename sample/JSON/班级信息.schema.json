@@ -1,8 +1,12 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/schemas/class-info.schema.json",
     "title": "班级信息",
     "type": "object",
     "properties": {
+        "$schema": {
+            "type": "string"
+        },
         "班级": {
             "type": "string"
         },
@@ -36,7 +40,8 @@
                     "名称",
                     "任课老师",
                     "课代表"
-                ]
+                ],
+                "additionalProperties": false
             }
         },
         "同学列表": {
@@ -54,7 +59,8 @@
                 "required": [
                     "姓名",
                     "家长电话"
-                ]
+                ],
+                "additionalProperties": false
             }
         }
     },
@@ -63,5 +69,6 @@
         "班主任",
         "课业列表",
         "同学列表"
-    ]
+    ],
+    "additionalProperties": false
 }

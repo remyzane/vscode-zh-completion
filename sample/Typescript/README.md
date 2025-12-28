@@ -1,8 +1,8 @@
-# C 语言 中文命名示例
+# TypeScript 中文命名示例
 
 ## 环境准备
 
-请先安装 本插件 和 [C 语言支持插件](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack)
+请先安装 本插件 和 [TypeScript 语言支持插件](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-next)
 
 ## 编写代码
 
@@ -13,25 +13,20 @@
 
 本项目中的示例代码已通过编译器验证，可正常编译与运行。
 
-### 编译要求
+### 安装依赖
 
-- GCC 编译器
-- 支持 C99 标准
+```bash
+npm install
+```
 
 ### 编译命令
 
 ```bash
-make
+npx tsc
 ```
 
 ### 运行命令
 
 ```bash
-make run
-```
-
-### 清理命令
-
-```bash
-make clean
+node dist/样例.js
 ```

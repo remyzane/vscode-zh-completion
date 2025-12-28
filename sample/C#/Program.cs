@@ -5,7 +5,7 @@ namespace Simple
 {
     class Program
     {
-        /** C# 中文命名样例 */
+        /** C# 中文命名示例 */
         public static void 样例(string 参数)
         {
             Console.WriteLine($"喜欢的颜色: {颜色枚举.红色}");
@@ -17,7 +17,7 @@ namespace Simple
         }
         static void Main(string[] args)
         {
-            Program.样例(参数: "中文命名样例");
+            Program.样例(参数: "中文命名示例");
         }
     }
 }

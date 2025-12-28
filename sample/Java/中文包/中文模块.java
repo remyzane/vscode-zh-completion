@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Java 中文命名样例
+ * Java 中文命名示例
  */
 
 public class 中文模块 {
