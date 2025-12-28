@@ -3,10 +3,11 @@ import * as vsc from '../接口封装';
 
 export abstract class 语言基类 {
     public 触发字符!: string[];
-    public 补全锚点配置?: 锚点配置T;
+    public 无需矫正补全锚点?: boolean;
+    // public 补全锚点配置?: 锚点配置T;
 
-    public 不需要矫正锚点(文档: vsc.TextDocument): boolean {
-        return !this.补全锚点配置;
+    public 需要矫正补全锚点(文档: vsc.TextDocument): boolean {
+        return !this.无需矫正补全锚点;
     }
 
     async 获得系统补全(
@@ -69,10 +70,10 @@ export abstract class 语言基类 {
     }
 }
 
-export interface 锚点配置T {
-    /** 判断一个字符是否属于标识符（如变量名中的字符） */
-    是否标识符字符: (字符: string) => boolean;
+// export interface 锚点配置T {
+//     /** 判断一个字符是否属于标识符（如变量名中的字符） */
+//     // 是否标识符字符: (字符: string) => boolean;
 
-    /** 最大回退距离，防止向左扫描过远影响性能 */
-    最大回退距离?: number;
-}
+//     /** 补全锚点最大矫正距离，防止向左扫描过远影响性能 */
+//     补全锚点最大矫正距离?: number;
+// }

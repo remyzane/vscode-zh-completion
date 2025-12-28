@@ -5,6 +5,7 @@ export class 语言实现 extends 语言基类 {
 
     constructor() {
         super();
+        this.无需矫正补全锚点 = true;
         this.触发字符 = [
             ':',    // 键值分隔符（key: ），触发值的补全（如字符串、列表、嵌套对象）
             ',',    // 行内序列分隔（[a, b, ]），触发下一个数组项

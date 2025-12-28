@@ -11,6 +11,7 @@ export class 语言实现 extends 语言基类 {
 
     constructor() {
         super();
+        this.无需矫正补全锚点 = true;
         this.触发字符 = [
             '<',    // 开始标签（如 <学生>）或闭合标签起始（</）
             '/',    // 闭合标签中的斜杠（输入 </ 后触发可闭合标签补全）

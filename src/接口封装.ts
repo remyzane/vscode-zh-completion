@@ -1,10 +1,14 @@
 /** VSCode 接口封装 */
 import * as vsc from 'vscode';
-import { 语言基类, 语言配置表, 通用语言实现, 锚点配置T } from './语言';
+// import { 语言基类, 语言配置表, 通用语言实现, 锚点配置T } from './语言';
+import { 语言基类, 语言配置表, 通用语言实现 } from './语言';
 
 export { window, workspace, languages, commands, TextDocument } from 'vscode';
 export { Position, ExtensionContext, CancellationToken } from 'vscode';
 export { CompletionContext, CompletionItem, CompletionList, CompletionItemLabel, CompletionItemKind } from 'vscode';
+
+// 如果超过这个距离，则不再向前搜索「触发字符」了
+export const 补全锚点最大矫正距离 = 40;  // 正常 40 就足够了（一般都能在40个字母内筛选出候选）（如有需要可以调大，性能影响不大）
 
 const outputChannel = vsc.window.createOutputChannel('中文代码补全');
 
@@ -42,32 +46,49 @@ export function 矫正补全锚点(文档: vsc.TextDocument, 位置: vsc.Positio
     const 矫正前锚点 = 位置.character;
     // 获取该语言的补全锚点配置，若无则使用默认配置
     const 语言 = (语言配置表 as { [key: string]: 语言基类 })[语言标识] || 通用语言实现;
-    const 配置 = 语言.补全锚点配置 as 锚点配置T;
-    const 最大回退距离 = 配置.最大回退距离 || 20;
+    // const 配置 = 语言.补全锚点配置 as 锚点配置T;
+
+    // const 补全锚点最大矫正距离 = 配置.补全锚点最大矫正距离 || 20;
     let 当前索引 = 矫正前锚点 - 1; // 锚点所在位置为空光标，前一位才是最后字符所在位置
     let 已回退步数 = 0;
-    // 步骤一：向左跳过所有属于“标识符”的字符（如变量名的一部分）
-    while (当前索引 > 0 && 已回退步数 < 最大回退距离) {
+
+    while (当前索引 >= 0 && 已回退步数 < 补全锚点最大矫正距离) {
         const 字符 = 行文本[当前索引];
-        if (配置.是否标识符字符(字符)) {
-            当前索引--;
-            已回退步数++;
-        } else {
-            break;
+        if (语言.触发字符.includes(字符)) {
+            // 找到触发字符，锚点移到其后
+            let 矫正后锚点 = 当前索引 + 1;
+            while (矫正后锚点 < 矫正前锚点 && /\s/.test(行文本[矫正后锚点])) {
+                矫正后锚点++;
+            }
+            return new vsc.Position(位置.line, 矫正后锚点);
         }
+        当前索引--;
+        已回退步数++;
     }
-    // 步骤二：检查当前位置前一个字符是否是语法边界
-    if (当前索引 >= 0 && 语言.触发字符.includes(行文本[当前索引])) {
-        // 跳过边界后的空白字符，定位到第一个有效字符
-        let 矫正后锚点 = 当前索引 + 1;
-        while (矫正后锚点 < 矫正前锚点 && /\s/.test(行文本[矫正后锚点])) {
-            矫正后锚点++;
-        }
-        // log(`矫正补全锚点a：${矫正前锚点} -> ${矫正后锚点}`);
-        return new vsc.Position(位置.line, 矫正后锚点);
-    }
-    // 步骤三：未找到语法边界，则返回当前标识符的起始位置
-    const 矫正后锚点 = 当前索引 === 0 ? 0 : 当前索引 + 1;
-    // log(`矫正补全锚点b：${矫正前锚点} -> ${矫正后锚点}`);
-    return new vsc.Position(位置.line, 矫正后锚点);
+    return new vsc.Position(位置.line, 矫正前锚点);
+
+    // // 步骤一：向左跳过所有属于“标识符”的字符（如变量名的一部分）
+    // while (当前索引 > 0 && 已回退步数 < 补全锚点最大矫正距离) {
+    //     const 字符 = 行文本[当前索引];
+    //     if (配置.是否标识符字符(字符)) {
+    //         当前索引--;
+    //         已回退步数++;
+    //     } else {
+    //         break;
+    //     }
+    // }
+    // // 步骤二：检查当前位置前一个字符是否是语法边界
+    // if (当前索引 >= 0 && 语言.触发字符.includes(行文本[当前索引])) {
+    //     // 跳过边界后的空白字符，定位到第一个有效字符
+    //     let 矫正后锚点 = 当前索引 + 1;
+    //     while (矫正后锚点 < 矫正前锚点 && /\s/.test(行文本[矫正后锚点])) {
+    //         矫正后锚点++;
+    //     }
+    //     // log(`矫正补全锚点a：${矫正前锚点} -> ${矫正后锚点}`);
+    //     return new vsc.Position(位置.line, 矫正后锚点);
+    // }
+    // // 步骤三：未找到语法边界，则返回当前标识符的起始位置
+    // const 矫正后锚点 = 当前索引 === 0 ? 0 : 当前索引 + 1;
+    // // log(`矫正补全锚点b：${矫正前锚点} -> ${矫正后锚点}`);
+    // return new vsc.Position(位置.line, 矫正后锚点);
 }

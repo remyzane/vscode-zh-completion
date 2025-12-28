@@ -6,6 +6,7 @@ export class 语言实现 extends 语言基类 {
 
     constructor() {
         super();
+        this.无需矫正补全锚点 = true;
         this.触发字符 = [
             '.',    // 成员访问（如 obj.）
             ':',    // 对象属性（{ key: ）、类型注解（TS: x: string）
