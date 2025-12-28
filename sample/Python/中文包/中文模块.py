@@ -50,7 +50,17 @@ class 动物类:
     类型 = '未知'
 
     def __init__(self, 名称):
+        self.name = 名称
         self.名称 = 名称
+
+    def 测试(self, 命令: str):
+        print(f'{self.名称} 测试了「{命令}」指令')
+
+    def test(self, 命令: str):
+        print(f'{self.名称} 测试了「{命令}」指令')
+
+    def 执行(self, 命令: str):
+        print(f'{self.名称} 执行了「{命令}」指令')
 
     def 发出声音(self):
         print(f'{self.名称}发出了声音')
@@ -58,7 +68,8 @@ class 动物类:
 
 class 犬类(动物类):
     def 发出声音(self):
-        super().发出声音()
+        super().测试('看家')
+        super().执行('看家')
         print(f'{self.名称}汪汪叫')
 
 

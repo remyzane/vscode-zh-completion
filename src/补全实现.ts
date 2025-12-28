@@ -28,6 +28,7 @@ export function 注册未知语言补全器(context: vsc.ExtensionContext) {
 export async function 补全实现(
     文档: vsc.TextDocument, 位置: vsc.Position, token: vsc.CancellationToken, context: vsc.CompletionContext
 ) {
+    vsc.log(`开始补全----------------`);
     const 输入值 = vsc.获得输入值();
 
     if (env.获得系统补全中) { return []; }  // 避免无限循环（调用'获得系统补全'时会调用'提供补全'函数, 这会导致无限循环）

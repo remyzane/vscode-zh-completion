@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- 定义“课业名称”枚举类型 -->
+    <xs:simpleType name="课业名称类型">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="语文" />
+            <xs:enumeration value="数学" />
+            <xs:enumeration value="英语" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- 根元素：班级信息 -->
+    <xs:element name="班级信息">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="班级" type="xs:string" />
+                <xs:element name="班主任" type="xs:string" />
+                <xs:element name="值日员" type="xs:string" minOccurs="0" />
+                <xs:element name="课业列表">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="课业" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:attribute name="名称" type="课业名称类型" use="required" />
+                                    <xs:attribute name="任课老师" type="xs:string" use="required" />
+                                    <xs:attribute name="课代表" type="xs:string" use="required" />
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="同学列表">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="同学" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:attribute name="姓名" type="xs:string" use="required" />
+                                    <xs:attribute name="家长电话" type="xs:string" use="required" />
+                                    <!-- 可选：对电话做简单格式限制（如数字+长度），但通常用 string 即可 -->
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

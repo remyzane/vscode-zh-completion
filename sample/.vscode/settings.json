@@ -19,5 +19,6 @@
     ],
     "dotnet.defaultSolution": "C#/Simple.sln",
     "workbench.colorTheme": "βui - Ayu Mirage",
-    "editor.cursorBlinking": "solid"
+    "editor.cursorBlinking": "solid",
+    "editor.renderLineHighlight": "all"
 }

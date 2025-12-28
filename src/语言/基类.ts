@@ -39,10 +39,10 @@ export abstract class 语言基类 {
     }
 
     设置排序权重(补全项: vsc.CompletionItem, 文本标签: string) {
-        // 中文项前排显示（要求首字符为中文）
-        if (/^[\u4e00-\u9fa5]/.test(文本标签)) {
-            补全项.sortText = `08.8888.${文本标签}`;
-        }
+        // // 中文项前排显示（要求首字符为中文）
+        // if (/^[\u4e00-\u9fa5]/.test(文本标签)) {
+        //     补全项.sortText = `08.8888.${文本标签}`;
+        // }
     }
 
     protected 过滤补全项(补全项: vsc.CompletionItem, 输入值: string): boolean {
@@ -72,9 +72,6 @@ export abstract class 语言基类 {
 export interface 锚点配置T {
     /** 判断一个字符是否属于标识符（如变量名中的字符） */
     是否标识符字符: (字符: string) => boolean;
-
-    /** 构成语法边界的字符集合（遇到这些符号可作为锚点参考） */
-    语法边界字符: Set<string>;
 
     /** 最大回退距离，防止向左扫描过远影响性能 */
     最大回退距离?: number;
