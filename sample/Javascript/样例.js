@@ -7,7 +7,7 @@ function Javascript样例({ 参数 }) {
 
     console.log(`喜欢的色号: ${颜色枚举.红色}`);
 
-    const 学生 = new 学生元组('李四', 17, '高二一班');
+    const 学生 = new 学生元组('小明', 17, '高二一班');
     console.log(`学生信息: ${学生.姓名}, ${学生.年龄}岁, ${学生.班级}`);
 
     console.log(参数);

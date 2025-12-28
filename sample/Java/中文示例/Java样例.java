@@ -11,7 +11,7 @@ public class Java样例 {
 
         System.out.println("喜欢的颜色: " + 颜色枚举.红色.name());
 
-        学生元组 学生 = new 学生元组("李四", 17, "高二一班");
+        学生元组 学生 = new 学生元组("小明", 17, "高二一班");
         System.out.println("学生信息: " + 学生.toString());
 
         for (String 参数 : 参数N) {

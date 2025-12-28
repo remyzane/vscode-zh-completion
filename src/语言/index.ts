@@ -9,6 +9,7 @@ import python from './实现/python';
 import rust from './实现/rust';
 import sql from './实现/sql';
 import typescript from './实现/typescript';
+import yaml from './实现/yaml';
 
 export type { 锚点配置T };
 export { 语言基类, 通用语言实现 };
@@ -23,6 +24,7 @@ export const 语言配置表: { [语言: string]: 语言基类 } = {
     rust,
     sql,
     typescript,
+    yaml,
 };
 
 export const 已配置的语言 = new Set(Object.keys(语言配置表));

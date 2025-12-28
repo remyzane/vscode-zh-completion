@@ -2,7 +2,7 @@
 <班级信息
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="ClassInfo.xsd">
-    <班级>三（2）班</班级>
+    <班级>高二一班</班级>
     <班主任>黄老师</班主任>
     <课业列表>
         <课业 名称="语文" 任课老师="方老师" 课代表="小明" />

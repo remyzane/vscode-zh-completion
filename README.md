@@ -12,20 +12,42 @@
 
 ### 效果图
 
-[Python](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/python.png)
-[代码样例](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/python.png)
+**Python**
+[语言插件](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylanc)
+[完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Python)
+[效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/Python.png)
+![](images/Python.png)
 
-![](images/python.png)
+**SQL**
+[语言插件](https://marketplace.visualstudio.com/items?itemName=cweijan.vscode-database-client2)
+[完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/SQL)
+[效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/SQL.png)
+![](images/SQL.png)
+
+**JavaScript**
+[语言插件](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-next)
+[完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/JavaScript)
+[效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/JavaScript.png)
+![](images/JavaScript.png)
+
+**TypeScript**
+[语言插件](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-next)
+[完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/TypeScript)
+[效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/TypeScript.png)
+![](images/TypeScript.png)
+
+**JSON**
+（VSCode 原生支持）
+[完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/JSON)
+[效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/JSON.png)
+![](images/JSON.png)
 
 ### 支持的语言
 
 测试各语言所需的语言服务器插件
 
-|     语言    |                                       |
-| ---------- | ------------------------------------- |
-| [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance) | [样例代码](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Python) |
-| [SQL](https://marketplace.visualstudio.com/items?itemName=cweijan.vscode-database-client2) | [样例代码](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/SQL) |
-| [JavaScript](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-next) | [样例代码](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/JavaScript) |
+<!--
+ | []() | [样例代码](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/) |
 | [TypeScript](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-next) | [样例代码](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/TypeScript) |
 | [Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) | [样例代码](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Java) |
 | [XML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-xml) | [样例代码](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/XML) |
@@ -33,7 +55,7 @@
 | [C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack) | [样例代码](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/C++) |
 | [C#](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp) | [样例代码](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/C#) |
 | [Rust](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer) | [样例代码](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Rust) |
-<!-- | [Xxx](https://marketplace.visualstudio.com/items?itemName=Xxx) | [样例代码](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Xxx) | -->
+| [Xxx](https://marketplace.visualstudio.com/items?itemName=Xxx) | [样例代码](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Xxx) | -->
 
 
 ## 配置

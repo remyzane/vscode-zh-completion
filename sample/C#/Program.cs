@@ -10,7 +10,7 @@ namespace Simple
         {
             Console.WriteLine($"喜欢的颜色: {颜色枚举.红色}");
 
-            学生元组 学生 = new("李四", 17, "高二一班");
+            学生元组 学生 = new("小明", 17, "高二一班");
             Console.WriteLine($"学生信息: {学生.姓名}, {学生.年龄}岁, {学生.班级}");
 
             Console.WriteLine(参数);
