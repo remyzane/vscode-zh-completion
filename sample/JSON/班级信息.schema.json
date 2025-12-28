@@ -1,0 +1,67 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "班级信息",
+    "type": "object",
+    "properties": {
+        "班级": {
+            "type": "string"
+        },
+        "班主任": {
+            "type": "string"
+        },
+        "值日员": {
+            "type": "string"
+        },
+        "课业列表": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "名称": {
+                        "type": "string",
+                        "enum": [
+                            "语文",
+                            "数学",
+                            "英语"
+                        ]
+                    },
+                    "任课老师": {
+                        "type": "string"
+                    },
+                    "课代表": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "名称",
+                    "任课老师",
+                    "课代表"
+                ]
+            }
+        },
+        "同学列表": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "姓名": {
+                        "type": "string"
+                    },
+                    "家长电话": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "姓名",
+                    "家长电话"
+                ]
+            }
+        }
+    },
+    "required": [
+        "班级",
+        "班主任",
+        "课业列表",
+        "同学列表"
+    ]
+}
