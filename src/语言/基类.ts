@@ -3,10 +3,11 @@ import * as vsc from '../接口封装';
 
 export abstract class 语言基类 {
     public 触发字符!: string[];
-    public 无需矫正补全锚点?: boolean;
+    public 无需矫正补全锚点?: boolean;  // 默认矫正补全锚点（大部分无需矫正补全锚点的语言，矫正补全锚点也能正常补全）
     // public 补全锚点配置?: 锚点配置T;
 
     public 需要矫正补全锚点(文档: vsc.TextDocument): boolean {
+        // vsc.log(`需要矫正补全锚点：${!this.无需矫正补全锚点} `);
         return !this.无需矫正补全锚点;
     }
 
