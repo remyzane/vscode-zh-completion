@@ -2,18 +2,11 @@
 namespace 中文包
 {
     // 学生结构体示例
-    public struct 学生元组
+    public struct 学生元组(string 姓名, int 年龄, string 班级)
     {
-        public string 姓名 { get; set; }
-        public int 年龄 { get; set; }
-        public string 班级 { get; set; }
-
-        public 学生元组(string 姓名, int 年龄, string 班级)
-        {
-            this.姓名 = 姓名;
-            this.年龄 = 年龄;
-            this.班级 = 班级;
-        }
+        public string 姓名 { get; set; } = 姓名;
+        public int 年龄 { get; set; } = 年龄;
+        public string 班级 { get; set; } = 班级;
     }
 
     // 枚举示例
@@ -30,7 +23,7 @@ namespace 中文包
         // for 循环示例
         public static void 遍历列表()
         {
-            List<string> 水果列表 = new List<string> { "苹果", "香蕉", "橙子", "葡萄" };
+            List<string> 水果列表 = ["苹果", "香蕉", "橙子", "葡萄"];
 
             foreach (string 水果 in 水果列表)
             {
@@ -69,7 +62,7 @@ namespace 中文包
             switch (形状)
             {
                 case "圆形":
-                    double 半径 = 参数.ContainsKey("半径") ? 参数["半径"] : 1.0;
+                    double 半径 = 参数.TryGetValue("半径", out double value) ? value : 1.0;
                     return 3.14159 * 半径 * 半径;
                 default:
                     return 0;
@@ -77,16 +70,11 @@ namespace 中文包
         }
 
         // 类的继承示例
-        public class 动物类
+        public class 动物类(string 名称)
         {
             public string 类型 { get; set; } = "未知";
 
-            public string 名称 { get; set; }
-
-            public 动物类(string 名称)
-            {
-                this.名称 = 名称;
-            }
+            public string 名称 { get; set; } = 名称;
 
             public virtual void 发出声音()
             {
@@ -94,12 +82,8 @@ namespace 中文包
             }
         }
 
-        public class 犬类 : 动物类
+        public class 犬类(string 名称) : 动物类(名称)
         {
-            public 犬类(string 名称) : base(名称)
-            {
-            }
-
             public override void 发出声音()
             {
                 Console.WriteLine($"{this.名称}汪汪叫");
@@ -132,7 +116,7 @@ namespace 中文包
         // 列表推导式示例（C# LINQ）
         public static List<int> 生成平方数列表()
         {
-            List<int> 数字列表 = new List<int> { 1, 2, 3, 4, 5 };
+            List<int> 数字列表 = [1, 2, 3, 4, 5];
             List<int> 平方数列表 = 数字列表.FindAll(数字 => 数字 % 2 == 1)
                                          .ConvertAll(数字 => 数字 * 数字);
             return 平方数列表;
