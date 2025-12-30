@@ -78,6 +78,7 @@
 [完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Rust)
 [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/Rust.png)
 ![](images/Rust.png)
+_如果 Rust 插件当前版本原问题（如 v0.3.2735 输入 self.基类. 会报错）请用老一点的版本（如：v0.3.2527（正常））_
 
 **YAML**
 [语言插件](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)

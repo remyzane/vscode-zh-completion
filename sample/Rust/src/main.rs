@@ -1,4 +1,3 @@
-
 use simple::中文模块;
 
 pub fn rust样例(参数: &str) {
