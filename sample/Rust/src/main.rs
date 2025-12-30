@@ -1,7 +1,7 @@
 
 use simple::中文模块;
 
-pub fn Rust样例(参数: &str) {
+pub fn rust样例(参数: &str) {
     println!("喜欢的颜色: {:?}", 中文模块::颜色枚举::红色);
 
     let 学生 = 中文模块::学生元组 {
@@ -15,5 +15,5 @@ pub fn Rust样例(参数: &str) {
 }
 
 fn main() {
-    Rust样例("Rust 中文命名示例");
+    rust样例("Rust 中文命名示例");
 }
