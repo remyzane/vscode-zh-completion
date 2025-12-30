@@ -12,112 +12,90 @@
 
 ## 支持的语言
 
-<!--
-<div style="display: flex; width: 100%; justify-content: space-between; align-items: center;">
-  <a href="xxxxx">语言插件</a>
-  <a href="yyyyy">完整样例</a>
-  <a href="zzzzz">效果图</a>
-</div>
--->
-
 ### Python
 
-<div style="width: 100%; display: flex; justify-content: space-between; align-items: center; text-decoration: none;">
-  <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance">语言插件</a>
-  <a href="https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Python">完整样例</a>
-  <a href="https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/Python.png">效果图</a>
-</div>
-
+[语言插件](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)&nbsp;&nbsp;&nbsp;&nbsp;
+[完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Python)&nbsp;&nbsp;&nbsp;&nbsp;
+[效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/Python.png)<br/>
 ![](images/Python.png)
 
 ### SQL
 
-<div style="display: flex; justify-content: space-between; align-items: center;">
-  <a href="https://marketplace.visualstudio.com/items?itemName=cweijan.vscode-database-client2">语言插件</a>
-  <a href="https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/SQL">完整样例</a>
-  <a href="https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/SQL.png">效果图</a>
-</div>
-
+[语言插件](https://marketplace.visualstudio.com/items?itemName=cweijan.vscode-database-client2)&nbsp;&nbsp;&nbsp;&nbsp;
+[完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/SQL)&nbsp;&nbsp;&nbsp;&nbsp;
+[效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/SQL.png)<br/>
 ![](images/SQL.png)
 
 ### JavaScript
 
+[语言插件](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-next)&nbsp;&nbsp;&nbsp;&nbsp;
+[完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/JavaScript)&nbsp;&nbsp;&nbsp;&nbsp;
+[效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/JavaScript.png)<br/>
 ![](images/JavaScript.png)
-
-<div style="display: flex; justify-content: space-between; align-items: center;">
-  <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-next">语言插件</a>
-  <a href="https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/JavaScript">完整样例</a>
-  <a href="https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/JavaScript.png">效果图</a>
-</div>
 
 ### TypeScript
 
+[语言插件](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-next)&nbsp;&nbsp;&nbsp;&nbsp;
+[完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/TypeScript)&nbsp;&nbsp;&nbsp;&nbsp;
+[效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/TypeScript.png)<br/>
 ![](images/TypeScript.png)
-
-<div style="display: flex; justify-content: space-between; align-items: center;">
-  <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-next">语言插件</a>
-  <a href="https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/TypeScript">完整样例</a>
-  <a href="https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/TypeScript.png">效果图</a>
-</div>
 
 ### JSON
 
-（VSCode 原生支持）
-[完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/JSON)
-[效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/JSON.png)
+[完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/JSON)&nbsp;&nbsp;&nbsp;&nbsp;
+[效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/JSON.png)<br/>
 ![](images/JSON.png)
-
+_JSON 无需安装语言支持插件（VSCode 原生支持）_
 
 ### Java
 
-:--- [语言插件](https://marketplace.visualstudio.com/items?itemName=redhat.java)
-:---: [完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Java)
----: [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/Java.png)
-
+[语言插件](https://marketplace.visualstudio.com/items?itemName=redhat.java)&nbsp;&nbsp;&nbsp;&nbsp;
+[完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Java)&nbsp;&nbsp;&nbsp;&nbsp;
+[效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/Java.png)<br/>
 ![](images/Java.png)
 
 ### XML
 
-[语言插件](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-xml)
-[完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/XML)
-[效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/XML.png)
+[语言插件](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-xml)&nbsp;&nbsp;&nbsp;&nbsp;
+[完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/XML)&nbsp;&nbsp;&nbsp;&nbsp;
+[效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/XML.png)<br/>
 ![](images/XML.png)
 
 ### C 语言
 
-[语言插件](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd)(
-请勿使用 cpptools（补全功能不完整）)
-[完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/C)
-[效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/C.png)
+[语言插件](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd)&nbsp;&nbsp;&nbsp;&nbsp;
+[完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/C)&nbsp;&nbsp;&nbsp;&nbsp;
+[效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/C.png)<br/>
 ![](images/C.png)
+_语言插件请勿使用 cpptools（补全功能不完整）_
 
 ### C++
 
-[语言插件](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd)
-[完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/C++)
-[效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/C++.png)
+[语言插件](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd)&nbsp;&nbsp;&nbsp;&nbsp;
+[完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/C++)&nbsp;&nbsp;&nbsp;&nbsp;
+[效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/C++.png)<br/>
 ![](images/C++.png)
 
 ### C#
 
-[语言插件](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)
-[完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/C#)
-[效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/C%23.png)
+[语言插件](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)&nbsp;&nbsp;&nbsp;&nbsp;
+[完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/C#)&nbsp;&nbsp;&nbsp;&nbsp;
+[效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/C%23.png)<br/>
 ![](images/C%23.png)
 
 ### Rust
 
-[语言插件](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
-[完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Rust)
-[效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/Rust.png)
+[语言插件](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)&nbsp;&nbsp;&nbsp;&nbsp;
+[完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Rust)&nbsp;&nbsp;&nbsp;&nbsp;
+[效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/Rust.png)<br/>
 ![](images/Rust.png)
 _如果 Rust 插件当前版本原问题（如 v0.3.2735 输入 self.基类. 会报错）请用老一点的版本（如：v0.3.2527（正常））_
 
 ### YAML
 
-[语言插件](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
-[完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/YAML)
-[效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/YAML.png)
+[语言插件](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)&nbsp;&nbsp;&nbsp;&nbsp;
+[完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/YAML)&nbsp;&nbsp;&nbsp;&nbsp;
+[效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/YAML.png)<br/>
 ![](images/YAML.png)
 
 ### Go
@@ -125,7 +103,6 @@ _如果 Rust 插件当前版本原问题（如 v0.3.2735 输入 self.基类. 会
 [语言插件](https://marketplace.visualstudio.com/items?itemName=golang.go)&nbsp;&nbsp;&nbsp;&nbsp;
 [完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Go)&nbsp;&nbsp;&nbsp;&nbsp;
 [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/Go.png)<br/>
-
 ![](images/Go.png)
 _Go包名须小写；导出标识符须大写开头（请加前缀 T，补全时插件会为您忽略 T 前缀）_
 
