@@ -28,10 +28,16 @@ export class 语言实现 extends 语言基类 {
     }
 
     获取补全项文本(补全项: vsc.CompletionItem): string {
-        let 补全项文本 = super.获取补全项文本(补全项);
-
+        // 不使用 补全项.filterText
+        let 补全项文本;
+        // label.label
+        补全项文本 = 补全项文本 || (补全项.label as vsc.CompletionItemLabel).label;
+        // label
+        补全项文本 = 补全项文本 || 补全项.label as string;
         // 如果补全项文本以 T 开头，且第二位为中文，则去掉 T
-
+        if (补全项文本 && 补全项文本.length > 1 && 补全项文本[0] === 'T' && /[\u4e00-\u9fa5]/.test(补全项文本[1])) {
+            补全项文本 = 补全项文本.substring(1);
+        }
         return 补全项文本;
     }
 }
