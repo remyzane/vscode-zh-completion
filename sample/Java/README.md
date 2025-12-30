@@ -2,7 +2,7 @@
 
 ## 环境准备
 
-请先安装 本插件 和 [Java 语言支持插件](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
+请先安装 本插件 和 [Java 语言支持插件](https://marketplace.visualstudio.com/items?itemName=redhat.java)
 
 ## 编写代码
 

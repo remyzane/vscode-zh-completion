@@ -43,7 +43,7 @@
 ![](images/JSON.png)
 
 **Java**
-[语言插件](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
+[语言插件](https://marketplace.visualstudio.com/items?itemName=redhat.java)
 [完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Java)
 [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/Java.png)
 ![](images/Java.png)

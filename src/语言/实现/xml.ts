@@ -5,9 +5,9 @@ import { 语言基类 } from '../基类';
 
 export class 语言实现 extends 语言基类 {
 
-    设置补全码(补全项: vsc.CompletionItem, 文本标签: string, 编码器: 补全码编码器) {
-        补全项.filterText = 编码器.生成补全码(补全项.filterText || 文本标签);
-    }
+    // 设置补全码(补全项: vsc.CompletionItem, 编码器: 补全码编码器) {
+    //     补全项.filterText = 编码器.生成补全码(补全项.filterText);
+    // }
 
     constructor() {
         super();

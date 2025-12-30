@@ -14,11 +14,8 @@ export class 语言实现 extends 语言基类 {
             '{',    // 初始化块、数组字面量或 Lambda 表达式（如 new int[]{1, } 或 () -> {）
             ':',    // Switch 标签（case x:）或 Lambda（x -> x: 不适用，但保留兼容性）
             '@',    // 注解开始（如 @Override 或 @RequestMapping(）
+            ' ',    // 计算、赋值或箭头（如 x * y = z、 x = 1 或 () -> x）
         ];
-        // this.补全锚点配置 = {
-        //     是否标识符字符: (字符) => /[a-zA-Z0-9_$]/.test(字符),
-        //     补全锚点最大矫正距离: 30,
-        // };
     }
 }
 
