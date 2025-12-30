@@ -1,8 +1,8 @@
-# C# 中文命名示例
+# Go 中文命名示例
 
 ## 环境准备
 
-请先安装本插件和 [C# 语言支持插件](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)
+请先安装本插件和 [Go 语言支持插件](https://marketplace.visualstudio.com/items?itemName=golang.go)
 
 ## 编写代码
 
@@ -13,18 +13,33 @@
 
 本项目中的示例代码已通过编译器验证，可正常编译与运行。
 
-### 编译要求
-
-- .NET 10.0 或更高版本
-
 ### 编译命令
 
 ```bash
-dotnet build
+go build
 ```
 
 ### 运行命令
 
 ```bash
-dotnet run
+go run main.go
+```
+
+### 其他命令
+
+```bash
+# 检查代码但不编译
+go vet
+
+# 运行测试
+go test
+
+# 清理构建文件
+go clean
+
+# 格式化代码
+go fmt
+
+# 生成文档
+go doc
 ```

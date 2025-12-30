@@ -2,7 +2,7 @@
 
 ## 环境配置
 
-请先安装 本插件 和 [SQL 语言支持插件](https://marketplace.visualstudio.com/items?itemName=cweijan.vscode-database-client2)
+请先安装本插件和 [SQL 语言支持插件](https://marketplace.visualstudio.com/items?itemName=cweijan.vscode-database-client2)
 
 ## 创建测试库
 

@@ -56,7 +56,7 @@
 
 **C 语言**
 [语言插件](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd)(
-请勿使用 ms-vscode.cpptools（补全功能不完整）)
+请勿使用 cpptools（补全功能不完整）)
 [完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/C)
 [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/C.png)
 ![](images/C.png)

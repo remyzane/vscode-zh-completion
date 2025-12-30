@@ -8,7 +8,9 @@ node_modules
 .DS_Store
 
 # Java
-*.class
+sample/Java/**/*.class
+# Go
+sample/Go/simple
 # C
 sample/C/main
 sample/C/**/*.o

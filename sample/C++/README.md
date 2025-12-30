@@ -2,7 +2,7 @@
 
 ## 环境准备
 
-请先安装 本插件 和 [C++ 语言支持插件](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd)
+请先安装本插件和 [C++ 语言支持插件](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd)
 
 ## 编写代码
 

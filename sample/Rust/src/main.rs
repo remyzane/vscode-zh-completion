@@ -3,7 +3,7 @@ use simple::中文模块;
 pub fn rust样例(参数: &str) {
     println!("喜欢的颜色: {:?}", 中文模块::颜色枚举::红色);
 
-    let 学生 = 中文模块::学生元组 {
+    let 学生: simple::学生元组 = 中文模块::学生元组 {
         姓名: "小明".to_string(),
         年龄: 17,
         班级: "高二一班".to_string(),

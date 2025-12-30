@@ -2,7 +2,7 @@
 
 ## 环境准备
 
-请先安装 本插件 和 [XML 语言支持插件](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-xml)
+请先安装本插件和 [XML 语言支持插件](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-xml)
 
 ## 定义 Schema
 

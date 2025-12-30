@@ -2,7 +2,7 @@
 
 ## 环境准备
 
-请先安装 本插件 和 [Python 语言支持插件](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
+请先安装本插件和 [Python 语言支持插件](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
 
 ## 编写代码
 

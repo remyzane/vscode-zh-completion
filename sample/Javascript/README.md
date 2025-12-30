@@ -2,7 +2,7 @@
 
 ## 环境准备
 
-请先安装 本插件 和 [JavaScript 语言支持插件](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-next)
+请先安装本插件和 [JavaScript 语言支持插件](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-next)
 
 ## 编写代码
 

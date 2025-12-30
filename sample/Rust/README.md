@@ -2,7 +2,7 @@
 
 ## 环境准备
 
-请先安装 本插件 和 [Rust 语言支持插件](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+请先安装本插件和 [Rust 语言支持插件](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
 
 _如果 Rust 插件当前版本原问题（如 v0.3.2735 输入 self.基类. 会报错）请用老一点的版本（如：v0.3.2527（正常））_
 
