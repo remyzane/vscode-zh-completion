@@ -1,5 +1,3 @@
-import * as vsc from '../../接口封装';
-import { 补全码编码器 } from '../../码表';
 import { 语言基类 } from '../基类';
 
 

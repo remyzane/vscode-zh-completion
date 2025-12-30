@@ -86,19 +86,13 @@ _如果 Rust 插件当前版本原问题（如 v0.3.2735 输入 self.基类. 会
 [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/YAML.png)
 ![](images/YAML.png)
 
+**Go**
+[语言插件](https://marketplace.visualstudio.com/items?itemName=golang.go)
+[完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Go)
+[效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/Go.png)
+![](images/Go.png)
+
 <!--
-**XxxxXxxxXxxx**
-[语言插件](https://marketplace.visualstudio.com/items?itemName=XXXXXX)
-[完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/XXXXXX)
-[效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/XXXXXX.png)
-![](images/XXXXXX.png)
-
-**XxxxXxxxXxxx**
-[语言插件](https://marketplace.visualstudio.com/items?itemName=XXXXXX)
-[完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/XXXXXX)
-[效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/XXXXXX.png)
-![](images/XXXXXX.png)
-
 **XxxxXxxxXxxx**
 [语言插件](https://marketplace.visualstudio.com/items?itemName=XXXXXX)
 [完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/XXXXXX)

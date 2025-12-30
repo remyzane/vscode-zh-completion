@@ -1,7 +1,6 @@
 // import { 语言基类, 锚点配置T } from './基类';
 import { 语言基类 } from './基类';
 import 通用语言实现 from './通用实现';
-import html from './实现/html';
 import java from './实现/java';
 import xml from './实现/xml';
 import javascript from './实现/javascript';
@@ -11,12 +10,12 @@ import rust from './实现/rust';
 import sql from './实现/sql';
 import typescript from './实现/typescript';
 import yaml from './实现/yaml';
+import go from './实现/go';
 
 // export type { 锚点配置T };
 export { 语言基类, 通用语言实现 };
 
 export const 语言配置表: { [语言: string]: 语言基类 } = {
-    html,
     java,
     xml,
     javascript,
@@ -26,6 +25,7 @@ export const 语言配置表: { [语言: string]: 语言基类 } = {
     sql,
     typescript,
     yaml,
+    go,
 };
 
 export const 已配置的语言 = new Set(Object.keys(语言配置表));
