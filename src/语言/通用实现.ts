@@ -11,7 +11,7 @@ const 不需要矫正补全锚点的语言: string[] = [];
 export class 通用语言实现 extends 语言基类 {
 
     public 需要矫正补全锚点(文档: vsc.TextDocument): boolean {
-        vsc.log(`需要矫正补全锚点：${!不需要矫正补全锚点的语言.includes(文档.languageId)} `);
+        // vsc.log(`需要矫正补全锚点：${!不需要矫正补全锚点的语言.includes(文档.languageId)} `);
         return !不需要矫正补全锚点的语言.includes(文档.languageId);
     }
 

@@ -28,7 +28,7 @@ export function 注册未知语言补全器(context: vsc.ExtensionContext) {
 export async function 补全实现(
     文档: vsc.TextDocument, 位置: vsc.Position, token: vsc.CancellationToken, context: vsc.CompletionContext
 ) {
-    vsc.log(`开始补全----------------`);
+    // vsc.log(`开始补全----------------`);
     const 输入值 = vsc.获得输入值();
 
     if (env.获得系统补全中) { return []; }  // 避免无限循环（调用'获得系统补全'时会调用'提供补全'函数, 这会导致无限循环）
@@ -52,11 +52,11 @@ export async function 补全实现(
     // 检查类型
     // 系统补全列表 = 系统补全列表.filter(补全项 => (typeof 补全项.label === 'string' || typeof 补全项.label.label === 'string'));
 
-    for (const 补全项 of 系统补全列表) { vsc.log(`系统补全项：${JSON.stringify(补全项)}`); }
+    // for (const 补全项 of 系统补全列表) { vsc.log(`系统补全项：${JSON.stringify(补全项)}`); }
 
     const 补全列表 = 语言.生成中文补全(env.编码器, 系统补全列表, 输入值);
 
-    for (const 补全项 of 补全列表) { vsc.log(`中文补全项：${JSON.stringify(补全项)}`); }
+    // for (const 补全项 of 补全列表) { vsc.log(`中文补全项：${JSON.stringify(补全项)}`); }
 
     return new vsc.CompletionList(补全列表, true);
 }

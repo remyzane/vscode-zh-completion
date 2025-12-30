@@ -12,19 +12,22 @@
 
 ## 支持的语言
 
-**Python**
+### Python
+
 [语言插件](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
 [完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Python)
 [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/Python.png)
 ![](images/Python.png)
 
-**SQL**
+### SQL
+
 [语言插件](https://marketplace.visualstudio.com/items?itemName=cweijan.vscode-database-client2)
 [完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/SQL)
 [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/SQL.png)
 ![](images/SQL.png)
 
-**JavaScript**
+### JavaScript
+
 [语言插件](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-next)
 [完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/JavaScript)
 [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/JavaScript.png)
@@ -70,8 +73,8 @@
 **C#**
 [语言插件](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)
 [完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/C#)
-[效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/C#.png)
-![](images/C#.png)
+[效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/C%23.png)
+![](images/C%23.png)
 
 **Rust**
 [语言插件](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
@@ -92,15 +95,7 @@ _如果 Rust 插件当前版本原问题（如 v0.3.2735 输入 self.基类. 会
 [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/Go.png)
 ![](images/Go.png)
 
-_Go包名须小写；导出标识符须大写开头（请加前缀 T，补全时插件会为您忽略 T）_
-
-<!--
-**XxxxXxxxXxxx**
-[语言插件](https://marketplace.visualstudio.com/items?itemName=XXXXXX)
-[完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/XXXXXX)
-[效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/XXXXXX.png)
-![](images/XXXXXX.png)
--->
+_Go包名须小写；导出标识符须大写开头（请加前缀 T，补全时插件会为您忽略 T 前缀）_
 
 ## 配置
 

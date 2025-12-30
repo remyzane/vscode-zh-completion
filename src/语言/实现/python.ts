@@ -7,6 +7,20 @@ export class 语言实现 extends 语言基类 {
     private 补全缓存KEY?: string;
     private 补全缓存内容?: vsc.CompletionList<vsc.CompletionItem>;
 
+    constructor() {
+        super();
+        this.触发字符 = [
+            '.',    // 成员访问（最核心）（如 obj.）
+            ':',    // 类型注解（如 x: int）或字典值上下文（如 {'k': ）
+            ',',    // 参数或元素分隔后继续补全（如 func(a, b, )）
+            '(',    // 函数调用参数提示（如 func(），常与签名帮助协同
+            '[',    // 索引或切片补全（如 arr[ 或 df['col']）
+            '{',    // 字典/集合字面量键补全（如 {'status': ）
+            '=',    // 关键字参数赋值（如 func(timeout=)）
+            ' ',    // 类静态成员或Model字段定义
+        ];
+    }
+
     需要缓存(行文本: string, 光标位置: number): boolean {
         // 输入 from . 或 from .. 或 from ..xx. 时，可以获得补全项（先缓存起来）
         if (行文本.startsWith('from ') && 行文本[光标位置 - 1] === '.') {
@@ -65,20 +79,6 @@ export class 语言实现 extends 语言基类 {
             }
         }
         return await super.获得系统补全(文档, 光标位置, 补全锚点);
-    }
-
-    constructor() {
-        super();
-        this.触发字符 = [
-            '.',    // 成员访问（最核心）（如 obj.）
-            ':',    // 类型注解（如 x: int）或字典值上下文（如 {'k': ）
-            ',',    // 参数或元素分隔后继续补全（如 func(a, b, )）
-            '(',    // 函数调用参数提示（如 func(），常与签名帮助协同
-            '[',    // 索引或切片补全（如 arr[ 或 df['col']）
-            '{',    // 字典/集合字面量键补全（如 {'status': ）
-            '=',    // 关键字参数赋值（如 func(timeout=)）
-            ' ',    // 类静态成员或Model字段定义
-        ];
     }
 }
 
