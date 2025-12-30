@@ -13,7 +13,7 @@
 ## 支持的语言
 
 <!--
-<div style="display: flex; justify-content: space-between; align-items: center;">
+<div style="display: flex; width: 100%; justify-content: space-between; align-items: center;">
   <a href="xxxxx">语言插件</a>
   <a href="yyyyy">完整样例</a>
   <a href="zzzzz">效果图</a>
@@ -22,7 +22,7 @@
 
 ### Python
 
-<div style="display: flex; justify-content: space-between; align-items: center;">
+<div style="width: 100%; display: flex; justify-content: space-between; align-items: center; text-decoration: none;">
   <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance">语言插件</a>
   <a href="https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Python">完整样例</a>
   <a href="https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/Python.png">效果图</a>
