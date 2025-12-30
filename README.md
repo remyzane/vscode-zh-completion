@@ -122,13 +122,12 @@ _如果 Rust 插件当前版本原问题（如 v0.3.2735 输入 self.基类. 会
 
 ### Go
 
-[语言插件](https://marketplace.visualstudio.com/items?itemName=golang.go)
-[完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Go)
-[效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/Go.png)
+[语言插件](https://marketplace.visualstudio.com/items?itemName=golang.go)&nbsp;&nbsp;&nbsp;&nbsp;
+[完整样例](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Go)&nbsp;&nbsp;&nbsp;&nbsp;
+[效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/Go.png)<br/>
+
 ![](images/Go.png)
-
 _Go包名须小写；导出标识符须大写开头（请加前缀 T，补全时插件会为您忽略 T 前缀）_
-
 
 ## 配置
 
