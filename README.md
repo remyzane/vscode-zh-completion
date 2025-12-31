@@ -46,7 +46,7 @@
 
 ## 命名规范
 
-我们整理了一份[中文命名规范](https://gitee.com/remyzane/zh-code-spec/blob/master/README.md)，欢迎参考、使用，并一起完善！
+我们整理了一份[中文命名规范](https://gitee.com/remyzane/zh-code-spec/blob/master/README.md)，欢迎参考、使用和一起完善！
 
 ## 版本更新说明
 
@@ -56,7 +56,8 @@
 
 如果您对本项目感兴趣，欢迎参与开发，共同完善。<br/>
 - [贡献指南](https://gitee.com/remyzane/vscode-zh-completion/blob/main/贡献指南.md)
-- [技术说明](https://gitee.com/remyzane/vscode-zh-completion/blob/main/技术说明.md)<br/>
+- [技术说明](https://gitee.com/remyzane/vscode-zh-completion/blob/main/技术说明.md)
+<br/>
 本项目基于 [BSD 3-Clause 许可证](https://opensource.org/licenses/BSD-3-Clause) 开源。
 
 ## 感谢
