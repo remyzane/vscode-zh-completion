@@ -1,9 +1,8 @@
 # 中文代码补全
 
-无须切换输入法，高效补全中文变量、方法与类名，提升中文编码体验。
-
 [![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/chinese.vscode-zh-completion?logo=visual-studio-code&label=VS%20Code%20插件)](https://marketplace.visualstudio.com/items?itemName=chinese.vscode-zh-completion)
 
+无须切换输入法，高效补全中文变量、方法与类名，提升中文编码体验。<br/>
 用中文命名替代中文注释，在不增加中英文切换次数的同时，大幅提升代码可读性与输入效率。
 
 ## 功能特点
@@ -29,7 +28,7 @@
 |  Go   |  一般  |  [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Go) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/Go.png)  |
 | JavaScript |  优秀  |  [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/JavaScript) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/JavaScript.png)  |
 | TypeScript |  优秀  |  [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/TypeScript) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/TypeScript.png)  |
-| Python |  优秀  |  [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Python) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/Python.png)  |
+| Python |  良好  |  [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Python) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/Python.png)  |
 |  SQL  |  优秀  |  [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/SQL) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/SQL.png)  |
 | **其他语言**  |  **支持**  |  **[使用说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Other)** |   |
 
@@ -45,17 +44,20 @@
 |  **声笔简拼**  |   同[**拼音**]，但首字母为 a、e、i、o、u 时，用 v 替代   |
 |  **声笔简码**  |   同[**声笔简拼**]，但最长4位，1、2、3 + 最后一位  |
 
-## 推荐
+## 命名规范
 
-[中文命名规范](https://gitee.com/remyzane/zh-code-spec/blob/master/README.md)
+我们整理了一份[中文命名规范](https://gitee.com/remyzane/zh-code-spec/blob/master/README.md)，欢迎参考、使用，并一起完善！
 
 ## 版本更新说明
 
 [CHANGELOG](CHANGELOG.md)
 
-## 协议
+## 开发协助
 
-本项目基于 BSD 3-Clause 许可证开源
+如果您对本项目感兴趣，欢迎参与开发，共同完善。<br/>
+- [贡献指南](https://gitee.com/remyzane/vscode-zh-completion/blob/main/贡献指南.md)
+- [技术说明](https://gitee.com/remyzane/vscode-zh-completion/blob/main/技术说明.md)<br/>
+本项目基于 [BSD 3-Clause 许可证](https://opensource.org/licenses/BSD-3-Clause) 开源。
 
 ## 感谢
 
