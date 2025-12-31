@@ -15,21 +15,21 @@
 
 ## 支持的语言
 
-|  语言 |  支持度  |    情况说明    |    效果图    |
+|  语言 |  支持度  |    使用说明    |    效果图    |
 | ---- | ------- | ------------- | ------------ |
-|  C   |  优秀  |  [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/C) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/C.png)  |
-|  C++  |  优秀  |  [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/C++) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/C++.png)  |
-|  C#  |  良好  |  [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/C%23) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/C%23.png)  |
-|  JSON |  优秀  |  [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/JSON) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/JSON.png)  |
-|  YAML |  优秀  |  [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/YAML) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/YAML.png)  |
-|  XML  |  良好  |  [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/XML) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/XML.png)  |
-|  Rust |  优秀  |  [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Rust) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/Rust.png)  |
-|  Java |  良好  |  [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Java) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/Java.png)  |
-|  Go   |  一般  |  [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Go) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/Go.png)  |
-| JavaScript |  优秀  |  [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/JavaScript) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/JavaScript.png)  |
-| TypeScript |  优秀  |  [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/TypeScript) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/TypeScript.png)  |
-| Python |  良好  |  [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Python) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/Python.png)  |
-|  SQL  |  优秀  |  [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/SQL) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/SQL.png)  |
+|  C   |  优秀  |  [使用说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/C) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/C.png)  |
+|  C++  |  优秀  |  [使用说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/C++) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/C++.png)  |
+|  C#  |  良好  |  [使用说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/C%23) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/C%23.png)  |
+|  JSON |  优秀  |  [使用说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/JSON) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/JSON.png)  |
+|  YAML |  优秀  |  [使用说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/YAML) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/YAML.png)  |
+|  XML  |  良好  |  [使用说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/XML) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/XML.png)  |
+|  Rust |  优秀  |  [使用说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Rust) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/Rust.png)  |
+|  Java |  良好  |  [使用说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Java) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/Java.png)  |
+|  Go   |  一般  |  [使用说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Go) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/Go.png)  |
+| JavaScript |  优秀  |  [使用说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/JavaScript) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/JavaScript.png)  |
+| TypeScript |  优秀  |  [使用说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/TypeScript) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/TypeScript.png)  |
+| Python |  良好  |  [使用说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Python) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/Python.png)  |
+|  SQL  |  优秀  |  [使用说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/SQL) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/SQL.png)  |
 | **其他语言**  |  **支持**  |  **[使用说明](https://gitee.com/remyzane/vscode-zh-completion/blob/main/使用说明SY.md)** |   |
 
 ## 支持的输入习惯
