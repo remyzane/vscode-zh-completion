@@ -52,6 +52,14 @@
 
 [CHANGELOG](CHANGELOG.md)
 
+## 问题反馈
+
+如果您在使用中遇到任何问题，欢迎通过以下渠道提交反馈：
+- [GitHub Issues](https://github.com/remyzane/vscode-zh-completion/issues)
+- [Gitee Issues](https://gitee.com/remyzane/vscode-zh-completion/issues)
+
+> 💡 **提示**：若看到重复的补全项，请无需担心 —— 这是 VS Code 的正常行为。由于补全数据可能同时来自本插件与其他语言插件，尽管内容相同，VS Code 仍会分别显示，属于预期现象。
+
 ## 开发协助
 
 如果您对本项目感兴趣，欢迎参与开发，共同完善。
@@ -63,9 +71,9 @@
 
 ## 感谢
 
-这个项目的诞生，离不开以下项目与朋友们的帮助：
+这个项目的诞生和成长，离不开以下项目与朋友们的帮助：
 
 - [中文代码快速补全](https://gitee.com/Program-in-Chinese/vscode_Chinese_Input_Assistant)：主要技术参考
 - [PYFL](https://www.npmjs.com/package/pyfl)：优秀的拼音首字母方案
 - [PinYin.js](https://github.com/sxei/pinyinjs)：优秀的汉字转拼音方案，多音字码表魔改自这里。同时该项目也是`PYFL`项目极简首字母码表的来源。
-- 正在使用的你 —— 感谢你的尝试（[如有任何问题，欢迎反馈](https://gitee.com/remyzane/vscode-zh-completion/issues)）
+- **正在使用的你** —— 感谢你的尝试与信任！
