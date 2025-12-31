@@ -58,7 +58,7 @@
 - [GitHub Issues](https://github.com/remyzane/vscode-zh-completion/issues)
 - [Gitee Issues](https://gitee.com/remyzane/vscode-zh-completion/issues)
 
-> 💡 **提示**：若看到重复的补全项，请无需担心 —— 这是 VS Code 的正常行为。由于补全数据可能同时来自本插件与其他语言插件，尽管内容相同，VS Code 仍会分别显示，属于预期现象。
+💡 **提示**：重复的补全项是正常现象 —— VS Code 会同时显示本插件与其他语言插件提供的相同建议。
 
 ## 开发协助
 
