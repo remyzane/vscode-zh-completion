@@ -4,11 +4,13 @@
 
 [![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/chinese.vscode-zh-completion?logo=visual-studio-code&label=VS%20Code%20插件)](https://marketplace.visualstudio.com/items?itemName=chinese.vscode-zh-completion)
 
-## 简介
+用中文命名替代中文注释，在不增加中英文切换次数的同时，大幅提升代码可读性与输入效率。
 
-**中文标识符的高效补全** —— 变量、函数、类名无需切换输入法即可直接输入，命名与注释仍使用你习惯的输入法。
+## 功能特点
 
-支持拼音、五笔等多种输入习惯，**只需一次选择，插件即自动加载对应码表并配置好补全逻辑**。
+- **简单易用**：您只需指定自己的输入习惯（如拼音（默认）、五笔等）
+- **轻量高效**：特别设计的码表，内存占用极低（拼音：60 KB，五笔：20 KB）
+- **广泛兼容**：已对主流编程语言、配置格式 和 SQL 进行充分测试与兼容
 
 ![](images/SQL.png)
 
@@ -16,24 +18,24 @@
 
 |  语言 |  支持度  |    情况说明    |    效果图    |
 | ---- | ------- | ------------- | ------------ |
-|  C   |  优秀 ｜ [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/C) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/C.png) ｜
-|  C++  |  优秀 ｜ [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/C++) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/C++.png) ｜
-|  C#  |  良好 ｜ [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/C%23) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/C%23.png) ｜
-|  JSON |  优秀 ｜ [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/JSON) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/JSON.png) ｜
-|  YAML |  优秀 ｜ [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/YAML) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/YAML.png) ｜
-|  XML  |  良好 ｜ [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/XML) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/XML.png) ｜
-|  Rust |  优秀 ｜ [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Rust) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/Rust.png) ｜
-|  Java |  良好 ｜ [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Java) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/Java.png) ｜
-|  Go   |  一般 ｜ [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Go) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/Go.png) ｜
-| JavaScript |  优秀 ｜ [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/JavaScript) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/JavaScript.png) ｜
-| TypeScript |  优秀 ｜ [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/TypeScript) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/TypeScript.png) ｜
-| Python |  优秀 ｜ [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Python) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/Python.png) ｜
-|  SQL  |  优秀 ｜ [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/SQL) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/SQL.png) ｜
-| **其他语言**  |  **支持** ｜ **[使用说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Other)** |  ｜
+|  C   |  优秀  |  [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/C) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/C.png)  |
+|  C++  |  优秀  |  [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/C++) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/C++.png)  |
+|  C#  |  良好  |  [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/C%23) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/C%23.png)  |
+|  JSON |  优秀  |  [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/JSON) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/JSON.png)  |
+|  YAML |  优秀  |  [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/YAML) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/YAML.png)  |
+|  XML  |  良好  |  [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/XML) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/XML.png)  |
+|  Rust |  优秀  |  [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Rust) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/Rust.png)  |
+|  Java |  良好  |  [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Java) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/Java.png)  |
+|  Go   |  一般  |  [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Go) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/Go.png)  |
+| JavaScript |  优秀  |  [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/JavaScript) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/JavaScript.png)  |
+| TypeScript |  优秀  |  [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/TypeScript) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/TypeScript.png)  |
+| Python |  优秀  |  [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Python) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/Python.png)  |
+|  SQL  |  优秀  |  [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/SQL) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/SQL.png)  |
+| **其他语言**  |  **支持**  |  **[使用说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Other)** |   |
 
 ## 支持的输入习惯
 
-您可以在配置文件中指定输入习惯（默认：拼音），插件会适配您的输入
+您可以在设置中选择自己的输入习惯（默认：拼音）
 
 |   输入习惯    |    补全码规则                                                |
 | ------------- | --------------------------------------------------------- |
@@ -42,26 +44,6 @@
 |  **五笔98版**  |   同[**五笔86版**]  |
 |  **声笔简拼**  |   同[**拼音**]，但首字母为 a、e、i、o、u 时，用 v 替代   |
 |  **声笔简码**  |   同[**声笔简拼**]，但最长4位，1、2、3 + 最后一位  |
-
-## 功能简介
-
-### ✅ 无须改变输入习惯
-
-
-### ⚡ 极致轻量高效
-
-**按需加载**：仅加载你配置的输入方案（如拼音 / 五笔）
-
-**极简码表**：特别设计的码表，内存占用极低（拼音：60 KB，五笔：20 KB）
-
-**减少冗余**：中文命名天然具备语义，显著降低对英文注释的依赖，在**不增加中英文切换次数的前提下，同时提升代码可读性与输入效率**。
-
-### 🌐 广泛兼容
-
-支持主流输入习惯（详见「输入习惯配置」）
-
-无缝适配 Python、JavaScript、Java、C++ 等主流编程语言
-
 
 ## 推荐
 
