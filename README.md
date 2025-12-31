@@ -30,7 +30,7 @@
 | TypeScript |  优秀  |  [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/TypeScript) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/TypeScript.png)  |
 | Python |  良好  |  [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Python) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/Python.png)  |
 |  SQL  |  优秀  |  [情况说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/SQL) | [效果图](https://gitee.com/remyzane/vscode-zh-completion/blob/main/images/SQL.png)  |
-| **其他语言**  |  **支持**  |  **[使用说明](https://gitee.com/remyzane/vscode-zh-completion/tree/main/sample/Other)** |   |
+| **其他语言**  |  **支持**  |  **[使用说明](https://gitee.com/remyzane/vscode-zh-completion/blob/main/使用说明SY.md)** |   |
 
 ## 支持的输入习惯
 
@@ -64,8 +64,8 @@
 
 如果您对本项目感兴趣，欢迎参与开发，共同完善。
 
-- [贡献指南](https://gitee.com/remyzane/vscode-zh-completion/blob/main/贡献指南.md)
-- [技术说明](https://gitee.com/remyzane/vscode-zh-completion/blob/main/技术说明.md)
+- [贡献指南](https://gitee.com/remyzane/vscode-zh-completion/blob/main/贡献指南GX.md)
+- [技术说明](https://gitee.com/remyzane/vscode-zh-completion/blob/main/技术说明JS.md)
 
 本项目基于 [BSD 3-Clause 许可证](https://opensource.org/licenses/BSD-3-Clause) 开源。
 

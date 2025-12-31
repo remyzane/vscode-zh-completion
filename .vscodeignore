@@ -7,7 +7,6 @@ sample/**
 script/**
 src/**
 publish.sh
-贡献指南.md
 .gitignore
 .yarnrc
 esbuild.js
