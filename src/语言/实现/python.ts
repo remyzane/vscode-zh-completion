@@ -23,7 +23,7 @@ export class 语言实现 extends 语言基类 {
 
     需要缓存(行文本: string, 光标位置: number): boolean {
         // 输入 from . 或 from .. 或 from ..xx. 时，可以获得补全项（先缓存起来）
-        if (行文本.startsWith('from ') && 行文本[光标位置 - 1] === '.') {
+        if (行文本.trimStart().startsWith('from ') && 行文本[光标位置 - 1] === '.') {
             this.补全缓存类型 = 'from';
             return true;
         }
