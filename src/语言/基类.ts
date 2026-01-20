@@ -23,13 +23,14 @@ export abstract class 语言基类 {
     }
 
     生成中文补全(编码器: 补全码编码器, 系统补全: vsc.CompletionItem[], 输入值: string): vsc.CompletionItem[] {
-        const 补全列表 = 系统补全.filter(
-            (补全项) => this.过滤补全项(补全项, 输入值)
+        const 中文补全列表 = 系统补全.filter(
+            (补全项) => this.获取中文补全项(补全项, 输入值)
         );
-        for (var 补全项 of 补全列表) {
-            this.设置补全码(补全项, 编码器);
+        for (var 中文补全项 of 中文补全列表) {
+            this.设置中文补全码(中文补全项, 编码器);
+            this.设置中文排序权重(中文补全项);
         }
-        return 补全列表;
+        return 中文补全列表;
     }
 
     获取补全项文本(补全项: vsc.CompletionItem): string {
@@ -41,20 +42,16 @@ export abstract class 语言基类 {
         return 补全项文本 || 补全项.label as string;
     }
 
-    设置补全码(补全项: vsc.CompletionItem, 编码器: 补全码编码器) {
-        const 补全项文本 = this.获取补全项文本(补全项);
-        补全项.filterText = 编码器.生成补全码(补全项文本);
+    设置中文补全码(中文补全项: vsc.CompletionItem, 编码器: 补全码编码器) {
+        const 补全项文本 = this.获取补全项文本(中文补全项);
+        中文补全项.filterText = 编码器.生成补全码(补全项文本);
     }
 
-    /** 弃用：会破坏原有排序权重 */
-    // 设置排序权重(补全项: vsc.CompletionItem, 文本标签: string) {
-    //     // 中文项前排显示（要求首字符为中文）
-    //     if (/^[\u4e00-\u9fa5]/.test(文本标签)) {
-    //         补全项.sortText = `08.8888.${文本标签}`;
-    //     }
-    // }
+    设置中文排序权重(中文补全项: vsc.CompletionItem) {
+        // 中文补全项.sortText = ;
+    }
 
-    protected 过滤补全项(补全项: vsc.CompletionItem, 输入值: string): boolean {
+    protected 获取中文补全项(补全项: vsc.CompletionItem, 输入值: string): boolean {
         const 标签值 = (补全项.label as any).label ? (补全项.label as any).label : 补全项.label;
         // vsc.log(`标签值：${标签值}`);
 
