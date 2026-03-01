@@ -5,13 +5,13 @@ export abstract class 五笔编码器 extends 补全码编码器 {
     abstract 码表: string;
 
     生成补全码(中文内容: string): string {
-        let 补全码组: string[];
+        const 补全码组: string[] = [];
 
         // if (中文内容.length > 4) {
         //     补全码组 = this.生成短句码组(中文内容);    // 声笔简码：最长4位，1、2、3 + 最后一位
         // } else {
         // }
-        补全码组 = [];
+
         for (let i = 0; i < 中文内容.length; i++) {
             let unicode = 中文内容.charCodeAt(i);
             let char = 中文内容.charAt(i);

@@ -49,14 +49,9 @@ def 多音字码表生成():
                 if 首字母 != 标准首字母:
                     不含标准首字母码表[字] = 首字母
 
-    with open(
-        os.path.realpath(os.path.join(__file__, "..", "拼音多音字码表.ts")),
-        "w",
-        encoding="utf-8",
-    ) as f:
-        f.write("export const 拼音多音字码表 = ")
-        f.write(json.dumps(不含标准首字母码表, ensure_ascii=False, separators=(",", ":")))
-        f.write(";")
+    拼音多音字, 拼音多音字首字母 = zip(*不含标准首字母码表.items())
+    print('private 拼音多音字: string = "%s"' % ''.join(拼音多音字))
+    print('private 拼音多音字首字母: string = "%s"' % ''.join(拼音多音字首字母) )
 
 
 if __name__ == "__main__":
@@ -71,4 +66,3 @@ if __name__ == "__main__":
     with open(多音字词表文件, "r", encoding="utf-8") as f:
         多音字词表 = json.load(f)
     多音字码表生成()
-    print("✅ 精简后的词表已经生成到本文件同目录下的：拼音多音字码表.ts")
