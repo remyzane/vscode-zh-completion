@@ -1,7 +1,7 @@
 import { uniqWith } from 'ramda';
 import * as vsc from './接口封装';
-import { 通用语言实现, 语言配置表, 已知语言 } from './语言';
 import { env } from './环境配置';
+import { 已知语言, 语言配置表, 通用语言实现 } from './语言';
 
 export function 注册已知语言补全器(context: vsc.ExtensionContext, 语言: string, 触发字符: string[], 未配置 = false) {
     vsc.log(`注册${未配置 ? '通用' : ''}补全器：${语言}, 触发字符：${触发字符}`);
