@@ -43,21 +43,18 @@ def 多音字码表生成():
     for 字, 首字母串 in 多音字码表.items():
         标准首字母 = 拼音码表[ord(字) - 19968]
         if 字 in 多重多音表第二音标:
-            不含标准首字母串 = 多重多音表第二音标[字]
+            不含标准首字母码表[字] = 多重多音表第二音标[字]
         else:
-            不含标准首字母串 = ''
             for 首字母 in 首字母串:
                 if 首字母 != 标准首字母:
-                    不含标准首字母串 += 首字母
-        if 不含标准首字母串:
-            不含标准首字母码表[字] = 不含标准首字母串
+                    不含标准首字母码表[字] = 首字母
 
     with open(
         os.path.realpath(os.path.join(__file__, "..", "拼音多音字码表.ts")),
         "w",
         encoding="utf-8",
     ) as f:
-        f.write("export const 多音字码表 = ")
+        f.write("export const 拼音多音字码表 = ")
         f.write(json.dumps(不含标准首字母码表, ensure_ascii=False, separators=(",", ":")))
         f.write(";")
 
