@@ -2,6 +2,29 @@ from io import StringIO
 import os
 import json
 
+多重多音表第二音标 = {
+    # 下面注释的第一个字母为第一音标、第二个字母为第二音标（第三、第四音标丢弃）
+    '恶': 'w', # e w l
+    '石': 'd', # s d l
+    '藏': 'z', # c z s
+    '见': 'x', # j x c
+    '疐': 's', # z s m
+    '齐': 'j', # q j z
+    '将': 'q', # j q a
+    '被': 'p', # b p c
+    '卒': 'c', # z c f
+    '吭': 'h', # k h g
+    '单': 's', # d s c
+    '窾': 'z', # k z y t
+    '擿': 't', # z t f
+    '伽': 'j', # g j q
+    '熯': 'h', # r h s
+    '燋': 'j', # q j z
+    '籓': 'f', # p f z
+    '儗': 'n', # y n l
+    '埶': 'z', # y z x
+    '愒': 'k', # q k a y
+}
 
 
 def 多音字码表生成():
@@ -19,15 +42,18 @@ def 多音字码表生成():
     不含标准首字母码表 = {}
     for 字, 首字母串 in 多音字码表.items():
         标准首字母 = 拼音码表[ord(字) - 19968]
-        不含标准首字母串 = ''
-        for 首字母 in 首字母串:
-            if 首字母 != 标准首字母:
-                不含标准首字母串 += 首字母
+        if 字 in 多重多音表第二音标:
+            不含标准首字母串 = 多重多音表第二音标[字]
+        else:
+            不含标准首字母串 = ''
+            for 首字母 in 首字母串:
+                if 首字母 != 标准首字母:
+                    不含标准首字母串 += 首字母
         if 不含标准首字母串:
             不含标准首字母码表[字] = 不含标准首字母串
 
     with open(
-        os.path.realpath(os.path.join(__file__, "..", "多音字码表.ts")),
+        os.path.realpath(os.path.join(__file__, "..", "拼音多音字码表.ts")),
         "w",
         encoding="utf-8",
     ) as f:
@@ -48,4 +74,4 @@ if __name__ == "__main__":
     with open(多音字词表文件, "r", encoding="utf-8") as f:
         多音字词表 = json.load(f)
     多音字码表生成()
-    print("✅ 精简后的词表已经生成到本文件同目录下的：多音字码表.ts")
+    print("✅ 精简后的词表已经生成到本文件同目录下的：拼音多音字码表.ts")
