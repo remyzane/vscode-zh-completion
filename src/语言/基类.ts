@@ -4,7 +4,6 @@ import * as vsc from '../接口封装';
 export abstract class 语言基类 {
     public 触发字符!: string[];
     public 无需矫正补全锚点?: boolean;  // 默认矫正补全锚点（大部分无需矫正补全锚点的语言，矫正补全锚点也能正常补全）
-    // public 补全锚点配置?: 锚点配置T;
 
     public 需要矫正补全锚点(文档: vsc.TextDocument): boolean {
         // vsc.log(`需要矫正补全锚点：${!this.无需矫正补全锚点} `);
@@ -74,11 +73,3 @@ export abstract class 语言基类 {
         return true;
     }
 }
-
-// export interface 锚点配置T {
-//     /** 判断一个字符是否属于标识符（如变量名中的字符） */
-//     // 是否标识符字符: (字符: string) => boolean;
-
-//     /** 补全锚点最大矫正距离，防止向左扫描过远影响性能 */
-//     补全锚点最大矫正距离?: number;
-// }
