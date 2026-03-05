@@ -31,7 +31,8 @@ export class 语言实现 extends 语言基类 {
         // 不使用 补全项.filterText
         let 补全项文本;
         // label.label
-        补全项文本 = 补全项文本 || (补全项.label as vsc.CompletionItemLabel).label;
+        // 补全项文本 = 补全项文本 || (补全项.label as vsc.CompletionItemLabel).label;  // 适用于 vscode 1.62 及以上版本
+        补全项文本 = 补全项文本 || (补全项.label as any).label; // 适用于 vscode 1.57 版本（兼容 国企/银行）
         // label
         补全项文本 = 补全项文本 || 补全项.label as string;
         // 如果补全项文本以 T 开头，且第二位为中文，则去掉 T

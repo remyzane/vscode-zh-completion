@@ -3,7 +3,7 @@ import * as vsc from 'vscode';
 // import { 语言基类, 语言配置表, 通用语言实现, 锚点配置T } from './语言';
 import { 语言基类, 语言配置表, 通用语言实现 } from './语言';
 
-export { CancellationToken, commands, CompletionContext, CompletionItem, CompletionItemKind, CompletionItemLabel, CompletionList, ExtensionContext, languages, Position, TextDocument, window, workspace } from 'vscode';
+export { CancellationToken, commands, CompletionContext, CompletionItem, CompletionItemKind, CompletionList, ExtensionContext, languages, Position, TextDocument, window, workspace } from 'vscode';
 
 // 如果超过这个距离，则不再向前搜索「触发字符」了
 export const 补全锚点最大矫正距离 = 40;  // 正常 40 就足够了（一般都能在40个字母内筛选出候选）（如有需要可以调大，性能影响不大）

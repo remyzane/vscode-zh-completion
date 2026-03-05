@@ -78,7 +78,7 @@ export class 语言实现 extends 语言基类 {
 
             }
         }
-        return await super.获得系统补全(文档, 光标位置, 补全锚点);
+        return await super.获得系统补全(文档, 光标位置, 补全锚点) || { items: [] };
     }
 }
 

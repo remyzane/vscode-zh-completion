@@ -1,5 +1,5 @@
-import { 补全码编码器 } from '../码表';
 import * as vsc from '../接口封装';
+import { 补全码编码器 } from '../码表';
 
 export abstract class 语言基类 {
     public 触发字符!: string[];
@@ -18,7 +18,7 @@ export abstract class 语言基类 {
             文档.uri,
             补全锚点
         );
-        return 系统补全;
+        return 系统补全 || { items: [] };
     }
 
     生成中文补全(编码器: 补全码编码器, 系统补全: vsc.CompletionItem[], 输入值: string): vsc.CompletionItem[] {
@@ -36,7 +36,8 @@ export abstract class 语言基类 {
         // filterText
         let 补全项文本 = 补全项.filterText;
         // label.label
-        补全项文本 = 补全项文本 || (补全项.label as vsc.CompletionItemLabel).label;
+        // 补全项文本 = 补全项文本 || (补全项.label as vsc.CompletionItemLabel).label;  // 适用于 vscode 1.62 及以上版本
+        补全项文本 = 补全项文本 || (补全项.label as any).label;  // 适用于 vscode 1.57 版本（兼容 国企/银行）
         // label
         return 补全项文本 || 补全项.label as string;
     }
