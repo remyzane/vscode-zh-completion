@@ -13,9 +13,10 @@
     "代码补全",
     "pinyin",
     "拼音",
+    "小鹤双拼",
     "五笔"
   ],
-  "version": "1.5.2-2",
+  "version": "1.5.3",
   "publisher": "chinese",
   "license": "BSD-3-Clause",
   "engines": {

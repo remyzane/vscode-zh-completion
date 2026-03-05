@@ -56,7 +56,7 @@ export async function 补全实现(
 
     const 补全列表 = 语言.生成中文补全(env.编码器, 系统补全列表, 输入值);
 
-    for (const 补全项 of 补全列表) { vsc.log(`中文补全项：${JSON.stringify(补全项)}`); }
+    // for (const 补全项 of 补全列表) { vsc.log(`中文补全项：${JSON.stringify(补全项)}`); }
 
     return new vsc.CompletionList(补全列表, true);
 }
