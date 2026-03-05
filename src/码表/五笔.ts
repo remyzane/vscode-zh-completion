@@ -14,8 +14,8 @@ export abstract class 五笔编码器 extends 补全码编码器 {
 
         for (let i = 0; i < 中文内容.length; i++) {
             let unicode = 中文内容.charCodeAt(i);
-            let char = 中文内容.charAt(i);
-            if (unicode >= 19968 && unicode <= 40869) {
+            let char = 中文内容.charAt(i);                // 默认英文（直接使用）
+            if (unicode >= 19968 && unicode <= 40869) {  // 如果是中文（使用码表转换）
                 char = this.码表.charAt(unicode - 19968);
             }
             补全码组.push(char);

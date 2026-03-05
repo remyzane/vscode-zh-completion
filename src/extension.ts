@@ -15,7 +15,6 @@ export function activate(context: vsc.ExtensionContext) {
 
 		vsc.log('插件已启动');
 	} catch (e) {
-		console.error(e);
 		vsc.window.showInformationMessage('启动失败：' + e);
 	}
 }
