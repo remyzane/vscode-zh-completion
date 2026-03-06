@@ -32,7 +32,7 @@ sample/.vscode/settings.json 已做如下配置（请勿修改）：
 
 ## 插件命令
 
-### 创建插件
+### 创建插件（跳过）
 
 ```bash
 # 安装 Yeoman 工具集
@@ -41,8 +41,17 @@ npm install -g yo
 # 安装 Code 扩展生成器
 npm install -g generator-code
 
-# 创建（本项目）
+# 创建插件（如本项目）
 yo code
+```
+
+### 初始化环境
+
+```bash
+cd vscode-zh-completion
+
+# 安装依赖包
+npm install
 ```
 
 ### 调试插件
