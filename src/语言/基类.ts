@@ -6,7 +6,7 @@ export abstract class 语言基类 {
     public 无需矫正补全锚点?: boolean;  // 默认矫正补全锚点（大部分无需矫正补全锚点的语言，矫正补全锚点也能正常补全）
 
     public 需要矫正补全锚点(文档: vsc.TextDocument): boolean {
-        // vsc.log(`需要矫正补全锚点：${!this.无需矫正补全锚点} `);
+        // vsc.debug(`需要矫正补全锚点：${!this.无需矫正补全锚点} `);
         return !this.无需矫正补全锚点;
     }
 
@@ -53,7 +53,7 @@ export abstract class 语言基类 {
 
     protected 获取中文补全项(补全项: vsc.CompletionItem, 输入值: string): boolean {
         const 标签值 = (补全项.label as any).label ? (补全项.label as any).label : 补全项.label;
-        // vsc.log(`标签值：${标签值}`);
+        // vsc.debug(`标签值：${标签值}`);
 
         // 检查是否包含中文字符
         const 包含中文 = /[\u4e00-\u9fa5\u3007]/.test(标签值);

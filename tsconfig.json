@@ -3,7 +3,11 @@
 		"module": "Node16",
 		"target": "ES2022",
 		"lib": [
-			"ES2022"
+			"ES2022",
+			"dom"
+		],
+		"types": [
+			"node"
 		],
 		"sourceMap": true,
 		"rootDir": "src",

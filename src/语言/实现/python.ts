@@ -51,7 +51,7 @@ export class 语言实现 extends 语言基类 {
                 }
             }
         }
-        // vsc.log(`使用缓存: ${行文本}`)
+        // vsc.debug(`使用缓存: ${行文本}`)
         return false;
     }
 
