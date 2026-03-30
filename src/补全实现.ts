@@ -38,7 +38,7 @@ export async function 补全实现(
 
     vsc.debug(`补全「${输入值}」${文档.fileName}, ${文档.languageId}, ${锚点.line}:${锚点.character}`);
 
-    // 获得系统补全
+    // 获得系统补全器
     env.获得系统补全中 = true;
     try {
         var 系统补全器 = await 语言.获得系统补全(文档, 位置, 锚点);
@@ -46,16 +46,27 @@ export async function 补全实现(
         env.获得系统补全中 = false; // 即使 await 抛错，也会执行
     }
 
+    // 获取系统补全项
+    let 系统补全列表: vsc.CompletionItem[] = 系统补全器.items;
+
+    // 忽略 VSCode 自带的文本建议（带有 abc 图标、基于当前文件中已出现单词的补全项）
+    系统补全列表 = 系统补全列表.filter(item => item.kind !== vsc.CompletionItemKind.Text);
+
     // 去重
-    let 系统补全列表: vsc.CompletionItem[] = uniqWith((a, b) => a.label === b.label, 系统补全器.items);
+    系统补全列表 = uniqWith(
+        (a, b) =>
+            a.kind === b.kind &&
+            (typeof a.label === 'string' ? a.label : (a.label as any).label) ===
+            (typeof b.label === 'string' ? b.label : (b.label as any).label),
+        系统补全列表
+    );
 
-    // 检查类型
-    // 系统补全列表 = 系统补全列表.filter(补全项 => (typeof 补全项.label === 'string' || typeof 补全项.label.label === 'string'));
-
+    // for (const 补全项 of 系统补全列表) { vsc.输出(`系统补全项：${JSON.stringify(补全项)}`); }
     // for (const 补全项 of 系统补全列表) { vsc.debug(`系统补全项：${JSON.stringify(补全项)}`); }
 
     const 补全列表 = 语言.生成中文补全(env.编码器, 系统补全列表, 输入值);
 
+    // for (const 补全项 of 补全列表) { vsc.输出(`中文补全项：${JSON.stringify(补全项)}`); }
     // for (const 补全项 of 补全列表) { vsc.debug(`中文补全项：${JSON.stringify(补全项)}`); }
 
     return new vsc.CompletionList(补全列表, true);
