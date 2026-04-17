@@ -16,29 +16,31 @@ export class 编码器 extends 补全码编码器 {
     };
 
     生成补全码(中文内容: string): string {
-        let 补全码组: string[] = [];
-        let 多音码组: string[] = []; // 不考虑一个标识名中存在多个多音字的情况
+        const 补全码组: string[] = [];
+        const 结果集: string[] = [];
 
+        // 基础转换
         for (let i = 0; i < 中文内容.length; i++) {
-            let unicode = 中文内容.charCodeAt(i);
-            let char = 中文内容.charAt(i);                // 默认英文（直接使用）
-            if (unicode >= 19968 && unicode <= 40869) {  // 如果是中文（使用码表转换）
-                char = this.码表.charAt(unicode - 19968);
-            }
+            const unicode = 中文内容.charCodeAt(i);
+            const char = (unicode >= 19968 && unicode <= 40869)
+                ? this.码表.charAt(unicode - 19968)
+                : 中文内容.charAt(i);
             补全码组.push(char);
+        }
+        结果集.push(补全码组.join(""));
+
+        // 多音字变体，如「单行」的发音可以为：  dh、  dx（行政）、  s（单县）h
+        // 不考虑多个多音字组合，如：s（单县）x（行政），极少见，且输入 sx，vscode 也能匹配到 'dh dx sh'（包含了 s 和 x 的字母）
+        for (let i = 0; i < 中文内容.length; i++) {
             const index = this.拼音多音字.indexOf(中文内容[i]);
             if (index >= 0) {
-                多音码组.push(this.拼音多音字首字母[index]);
-            } else {
-                多音码组.push(char);
+                const 变体 = [...补全码组];
+                变体[i] = this.拼音多音字首字母[index];
+                结果集.push(变体.join(""));
             }
         }
-        if (补全码组 === 多音码组) {    // 没有多音字的情况
-            return 补全码组.join("");
-        } else {                    // 有多音字的情况
-            return 补全码组.join("") + " " + 多音码组.join("");
-        }
-        // return 中文内容;
+
+        return 结果集.join(" ");
     }
 }
 
