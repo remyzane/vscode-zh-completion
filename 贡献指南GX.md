@@ -36,10 +36,10 @@ sample/.vscode/settings.json 已做如下配置（请勿修改）：
 
 ```bash
 # 安装 Yeoman 工具集
-npm install -g yo
+pnpm install -g yo
 
 # 安装 Code 扩展生成器
-npm install -g generator-code
+pnpm install -g generator-code
 
 # 创建插件（如本项目）
 yo code
@@ -51,7 +51,7 @@ yo code
 cd vscode-zh-completion
 
 # 安装依赖包
-npm install
+pnpm install
 ```
 
 ### 调试插件
@@ -62,7 +62,7 @@ npm install
 
 ```bash
 # 安装打包环境
-npm install -g vsce
+pnpm install -g vsce
 
 # 生成插件
 vsce package --no-dependencies
