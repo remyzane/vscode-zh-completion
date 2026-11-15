@@ -4,6 +4,8 @@ import { 注册已知语言补全器, 注册未知语言补全器 } from './补�
 import { 已知语言, 已配置的语言, 语言基类, 语言配置表, 通用语言实现 } from './语言';
 
 class Env {
+    public 调试模式: boolean = false;
+
     // 调用'获得系统补全'时会调用'提供补全'函数, 这会导致无限循环，为了避免此问题，添加此变量用于标识
     public 获得系统补全中: boolean = false;
 
